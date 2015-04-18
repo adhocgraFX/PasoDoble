@@ -1,0 +1,78 @@
+/**
+*
+* Button
+*
+**/
+
+.btn {
+  display: inline-block;
+  padding: .5em 1em; // (($lineHeight / 2) - 1) 32px;
+  margin-bottom: $lineHeight / 2;
+  margin-top: $lineHeight / 2;
+  min-height: $lineHeight;
+
+  text-align: center;
+
+  font-family: $fontHighlight;
+  font-weight: 600;
+  text-decoration: none;
+
+  outline: 0;
+
+  transition: none;
+}
+
+// Mixin to create buttons
+@mixin style-button($color, $textColor, $isInverted: false) {
+
+  background: $color;
+  color: $textColor;
+  border: 1px solid darken($color, 10%);
+
+  @if $isInverted { border-color: transparent;}
+
+  &:hover {
+    background: darken($color, 10%);;
+    color: $textColor;
+    border: 1px solid darken($color, 20%);;
+    text-decoration: none;
+  }
+
+  &:active {
+    background: darken($color, 20%);;
+    color: $textColor;
+    border: 1px solid darken($color, 30%);;
+    text-decoration: none;
+  }
+}
+
+@mixin border-radius($radius: .25em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+.btn-primary {
+  @extend .btn;
+  @include style-button($colorBlue, #ffffff);
+  @include border-radius();
+}
+
+.btn-secondary {
+  @extend .btn;
+  @include style-button(#ffffff, $colorBlue);
+  @include border-radius();
+}
+
+.btn-secondary-variation {
+  @extend .btn;
+  @include style-button(#ffffff, $colorBlue, true);
+  @include border-radius();
+}
+
+.btn-alert {
+  @extend .btn;
+  @include style-button($colorRed, #ffffff);
+  @include border-radius();
+}

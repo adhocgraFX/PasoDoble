@@ -1,0 +1,67 @@
+// breadcrumbs
+.breadcrumbs-container {
+	background: @smoke;
+    font-size: .875em;
+
+}
+
+ul.breadcrumb {
+    border: 1px solid @gainsboro;
+	line-height: 1.4;
+	padding: 0;
+    margin: .5em;
+	list-style-type: none;
+	overflow: hidden;
+	background: transparent;
+
+	li {
+		list-style: none;
+		position: relative;
+		display: block;
+		float: left;
+		padding: 0;
+		margin: 0;
+
+		&.active {
+			padding: .5em 0;
+
+			span.divider {
+				position: relative;
+				float: left;
+				padding: 0 .5em;
+				color: @concrete;
+				line-height: 1.4;
+			}
+		}
+
+		span.divider {
+			position: relative;
+			float: left;
+			padding: .5em .25em;
+			color: @concrete;
+			line-height: 1.4;
+		}
+
+		a {
+			text-decoration: none;
+			font-weight: normal;
+			position: relative;
+			display: block;
+			float: left;
+			padding: .5em 1em;
+			color: @concrete-darker;
+			background: transparent;
+			// .border-radius(@baseBorderRadius);
+
+			&:hover {
+				color: @whitesmoke;
+				background: @concrete;
+			}
+
+			&:focus, &:active {
+				color: @whitesmoke;
+				background: @concrete-dark;
+			}
+		}
+	}
+}

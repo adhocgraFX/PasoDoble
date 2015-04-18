@@ -1,0 +1,71 @@
+/**
+*
+* Breadcrumb
+* ul.breadcrumb
+*
+**/
+
+ul.breadcrumb {
+  display: none;
+  @include medium {
+    display: block;
+  }
+
+  position: relative;
+  z-index: 1;
+
+  li {
+    @include type--small;
+    // padding-top: $lineHeight;
+    list-style: none;
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0 .5em 0 0;
+
+    &::before {
+      content: "";
+    }
+
+    &.active {
+      padding: .5em 0;
+
+      span.divider {
+        position: relative;
+        padding: 0 .25em;
+        color: @concrete;
+        top: 0;
+      }
+    }
+
+    a {
+      @include type--small;
+      color: black;
+      font-weight: 400;
+      padding-top: 0;
+      text-decoration: none;
+      position: relative;
+      display: block;
+      float: left;
+      // padding: .5em 1em;
+      // color: @concrete-darker;
+      // background: transparent;
+      // .border-radius(@baseBorderRadius);
+
+      &:hover {
+        // color: @whitesmoke;
+        // background: @concrete;
+      }
+
+      &:focus, &:active {
+        // color: @whitesmoke;
+        // background: @concrete-dark;
+      }
+
+      @include medium {
+        padding-top: 0;
+      }
+    }
+  }
+}
