@@ -12,13 +12,16 @@ $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s",time() + $offset) . " GMT";
 header($ExpStr);
 
 // load scripts
-require('responsiveslides.min.js');
+// textresizer
 require('jquery.cookie.min.js');
 require('jquery.textresizer.min.js');
 
-// tap <> hover lösung für drop downs
-// require('doubletaptogo.min.js');
+// doubletaptogo > hover lösung für drop downs
+require('doubletaptogo.min.js');
 
-// experiment
+// boxer > modal windows und image galeries
 require('jquery.fs.boxer.min.js');
+
+// flickity by dessandro
+require('flickity.pkgd.min.js');
 ?>

@@ -12,10 +12,9 @@ input,
 textarea,
 select {
     border: 0px solid transparent;
-    border-bottom: .2em solid @link-color;
+    border-bottom: .2em solid @color-link;
 	padding: .5em 1em 0.33em 1em;
 	outline: none;
-	// .border-radius(@baseBorderRadius);
 	color: @gray;
 	background: @whitesmoke;
 	margin: 0;
@@ -25,7 +24,7 @@ select {
 
 	&:focus {
         border: 0px solid transparent;
-        border-bottom: .2em solid @link-focus-color;
+        border-bottom: .2em solid @color-link-focus;
 		color: @gray-dark;
 		background: @smoke;
 	}
@@ -53,7 +52,8 @@ input[type="month"],
 input[type="week"],
 input[type="time"],
 input[type="datetime-local"], {
-	padding: 0;
+	// padding: .5em;
+    font-size: .875em;
 }
 
 input[type="button"],

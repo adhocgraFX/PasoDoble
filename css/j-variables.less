@@ -1,119 +1,65 @@
-// Colors and grays
+// color Standards editable
 
-// Grays komplette Grauwerttabelle in 5%
+// body and basic text colors
+@color-body: @smoke;
+@color-body-copy: @concrete-darker;
+@color-heading: @concrete-dark;
+@color-subheading: @concrete;
 
-@black:                 #000000;
-@gray5:                 #0D0D0D;
-@gray-darker:           #1A1A1A;
-@gray15:                #262626;
-@gray-dark:             #333333;
-@gray25:                #404040;
-@gray30:                #4D4D4D;
-@gray35:                #595959;
-@gray:                  #666666;
-@gray45:                #737373;
-@gray50:                #7F7F7F;
-@gray55:                #8C8C8C;
-@gray-light:            #999999;
-@gray65:                #A6A6A6;
-@gray70:                #B3B3B3;
-@gray75:                #BFBFBF;
-@gray-lighter:          #CCCCCC;
-@gray85:                #D9D9D9;
+// alert boxes
+// warning
+@color-warning: @colorOrange500;
+// error
+@color-error: @colorRed500;
+// success
+@color-success: @colorLightGreen500;
+// info
+@color-info: @colorBlue500;
 
-@gainsboro-darker:      darken(@gainsboro, 10%); ;
-@gainsboro-dark:        darken(@gainsboro, 5%);
-@gainsboro:             #dcdcdc;
-@gainsboro-light:       lighten(@gainsboro, 5%);;
+// primary- und accent-color ala material design
+@color-primary:         @colorIndigo500;
+@color-accent:          @colorAmber500;
 
-@gray90:                #E5E5E5;
-@gray95:                #F2F2F2;
+// brand und accent text color je nach primary und accent color
+@color-brand-text:      @smoke;
+@color-accent-text:     @smoke;
 
-@whitesmoke-dark:       darken(@whitesmoke, 5%);
-@whitesmoke:            #f5f5f5;
-@whitesmoke-light:      #f9f9f9;
+// section colors
+@color-slider-back:         @colorBlueGrey50;
+@color-top-row-back:        @smoke;
+@color-bottom-row-back:     @colorBlueGrey100;
+@color-aside-back:          @smoke; // on desktop, on mobile > @primary-color
+@color-breadcrumbs-back:    @colorIndigo300;
 
-@smoke-dark:            #fdfdfd;
-@smoke:                 #fefefe;
+//
+// editing not recommended
+//
+// color sync
+// brand color mit primary in color sync
+@color-brand:           @color-primary;
+@color-brand-light:     lighten(@color-brand, 5%);
+@color-brand-lighter:   lighten(@color-brand, 10%);
+@color-brand-dark:      darken(@color-brand, 5%);
+@color-brand-darker:    darken(@color-brand, 10%);
 
-@white:                 #ffffff;
-
-
-// Accent colors
-
-// TODO Standards festlegen für alert boxes, buttons links, brands ...
-
-@clouds:                #F0F5FF;
-@clouds-dark:           #D3D8E0;
-
-@concrete:              #AAAEB5;
-@concrete-dark:         #6E7175;
-@concrete-darker:       #3C3D40;
-
-@midnightblue:          #34495E;
-@midnightblue-dark:     #2C3E50;
-@midnightblue-darker:   #253443;
-
-@turquoise:             #1ABC9C;
-@turquoise-dark:        #16A085;
-
-@blue:                  #3498DB;
-@blue-dark:             #2980B9;
-
-@green:                 #2ECC71;
-@green-dark:            #27AE60;
-
-@red:                   #E74C3C;
-@red-dark:              #C0392B;
-
-@yellow:                #F1C40F;
-@yellow-dark:           #F39C12;
-
-@orange:                #E67E22;
-@orange-dark:           #D35400;
-
-// light light barranco gold
-@gold-lighter:          #F0EBDC;
-@gold-light:            #E1DCBE;
-@gold:                  #AAA078;
-
-// primary- und accent-color a la material design
-@primary-color:         @colorIndigo600;
-@accent-color:          @colorDeepOrange400;
-
-// brand color je nach job
-@brand-color:           @primary-color;
-@brand-color-light:     lighten(@brand-color, 5%);
-@brand-color-lighter:   lighten(@brand-color, 10%);
-@brand-color-dark:      darken(@brand-color, 5%);
-@brand-color-darker:    darken(@brand-color, 10%);
-
-// JUG Fulda
-@jugfuldablue-light:    #99BAFF;
-@jugfuldablue:          #748dc1;
-@jugfuldablue-dark:     #2C4D91;
-@jugfuldablue-darker:   #244079;
-
-// link colors
-@link-color:            @accent-color;
-@link-hover-color:      lighten(@link-color, 5%);
-@link-focus-color:      darken(@link-color, 5%);
-@link-active-color:     darken(@link-color, 10%);
-@link-visited-color:    darken(@link-color, 10%);
-
+// link colors mit accent color in sync
+@color-link:            @color-accent;
+@color-link-hover:      lighten(@color-link, 10%);
+@color-link-focus:      darken(@color-link, 5%);
+@color-link-active:     darken(@color-link, 10%);
+@color-link-visited:    @color-accent; // todo was ist am besten?
 
 
 // Typeplate inspired font variables plus even more ...
-
 @weight: normal;
 
-@line-height:           1.4;
+@line-height-default:   1.4;
 @line-height-medium:    1.5;
 @line-height-large:     1.6;
 
 @line-height-heading:   1.1;
 
-@font-size:         100%;
+@font-size-default: 100%;
 @font-size-medium:  112.5%; // percentage value (16 * 112.5% = 18px)
 @font-size-large:   125%; // percentage value (16 * 125% = 20px)
 
@@ -121,8 +67,8 @@
 @font-size-mini:    75%; // percentage value (16 * 75% = 12px)
 
 // primary fonts to select
-@body-font:    'myriad-pro';
-@heading-font: 'myriad-pro';
+@body-font:    'Fira Sans';
+@heading-font: 'Fira Sans';
 
 // weights to choose and combine
 @thin:          100;
@@ -147,28 +93,16 @@
 
 @black:         900;
 
-
-// body and basic text colors
-
-@body-color: @smoke-dark;
-@body-copy-color: @concrete-darker;
-@heading-color: @concrete-dark;
-@subheading-color: @concrete;
-
-
 // TypeScale Unit
-
 @type-scale-unit-value: em;
 
 
 // Text Indentation Value, space between paragraphs
-
 @indent-val: 1.5em;
 @paragraph-val: @indent-val / 2;
 @small-paragraph-val: @indent-val / 4;
 
 
 // bootstrap variables
-
 @baseBorderRadius: .2em;
 @shadow: @gainsboro;

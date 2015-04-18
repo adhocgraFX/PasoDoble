@@ -21,6 +21,8 @@ $doc->addStyleSheet($tpath.'/css/print.css');
 
 <head>
   <jdoc:include type="head" />
+    <!-- brick fonts -->
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Fira+Sans:300,300i,400,400i,500,500i">
 </head>
 
 <body class="contentpane" id="print">

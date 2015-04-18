@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 
-<extension version="3.3" type="template" client="site" method="upgrade">
+<extension version="1" type="template" client="site" method="upgrade">
 	
 	<name>PasoDoble</name>
 	<creationDate>2015-01-01</creationDate>
@@ -12,10 +12,11 @@
 	<version>1.0.0</version>
 	<description>
 		<![CDATA[
-		<h1>Paso Doble / rwd Joomla! 3.3 template</h1>
+		<h1>Paso Doble / responsive Joomla! 3 template</h1>
 		<p>Created by <a href="http://www.adhocgrafx.de" target="_blank">adhocgraFX | adhocgrafx.de</a>.</p>
 		<h2>Modulepositions</h2>
 		<ul>
+			<li>search</li>
 			<li>nav</li>
 			<li>breadcrumbs</li>
 			<li>slideshow</li>
@@ -31,21 +32,19 @@
 	<files>
 		<folder>css</folder>
 		<folder>fonts</folder>
+        <folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
-
-        <folder>scripts</folder>
-		<folder>styles</folder>
-
+        <folder>languages</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
-		<filename>humans.txt</filename>
-		<filename>index.php</filename>
-		<filename>manifest.json</filename>
-		<filename>manifest.webapp</filename>
+        <filename>humans.txt</filename>
+        <filename>index.php</filename>
+        <!-- <filename>manifest.json</filename>
+        <filename>manifest.webapp</filename>
+        -->
 		<filename>offline.php</filename>
-		<filename>robots.txt</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
 		<filename>templateDetails.xml</filename>
@@ -80,30 +79,10 @@
                        label="Logo"
                        description="Select logo image" >
                 </field>
-                <field name="logotitle"
-                       type="text"
-                       default="Site Title"
-                       label="Logo Alt Title"
-                       description="Logo alt title"
-                       filter="string" >
-                </field>
                 <field name="bodybackground"
                        type="media"
                        label="Body Background Image"
                        description="Select body background image" >
-                </field>
-
-                <field name="Colors"
-                       type="spacer"
-                       hr="false" >
-                </field>
-                <field name="brandtextcolor"
-                       type="color"
-                       default="#826227"
-                       label="Brand Text Color H1"
-                       description="Brand Text Color H1"
-                       size="7"
-                       class="color" >
                 </field>
 
                 <field name="Typography"
@@ -118,11 +97,6 @@
                        label="Html base font size"
                        description="Html base font size in %" >
                 </field>
-
-                <field name="Text indent Paragraph"
-                       type="spacer"
-                       hr="false" >
-                </field>
                 <field name="textindent"
                        type="radio"
                        default="0"
@@ -130,11 +104,6 @@
                        description="Text indent Paragraph">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
-                </field>
-
-                <field name="Textresizer"
-                       type="spacer"
-                       hr="false" >
                 </field>
                 <field name="textresizer"
                        type="radio"
@@ -145,19 +114,26 @@
                     <option value="0">JNO</option>
                 </field>
 
-                <field name="Page width"
+                <field name="Max Main Content and Aside Width"
                        type="spacer"
                        hr="false" >
                 </field>
-                <field name="maxwidth"
+                <field name="mainwidth"
                        type="text"
                        filter="integer"
-                       default="58"
-                       label="Wrapper Width"
-                       description="Wrapper width in em"
-                       size="3" >
+                       default="75"
+                       label="Content Width"
+                       description="Content Width Flex Factor"
+                       size="7" >
                 </field>
-
+                <field name="asidewidth"
+                       type="text"
+                       filter="integer"
+                       default="25"
+                       label="Aside Width"
+                       description="Aside Width Flex Factor"
+                       size="7" >
+                </field>
             </fieldset>
 
             <fieldset name="advanced">

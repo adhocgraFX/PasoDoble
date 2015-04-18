@@ -2,11 +2,14 @@
 header('Content-type: text/css');
 
 // get template params
-$brandtextcolor = $this->params->get('brandtextcolor');
 $bodybackground = $this->params->get('bodybackground');
-$maxwidth = $this->params->get('maxwidth');
+
+$mainwidth = $this->params->get('mainwidth');
+$asidewidth = $this->params->get('asidewidth');
+
 $basefontsize = $this->params->get('basefontsize');
 $textindent = $this->params->get('textindent');
+$textresizer = $this->params->get('textresizer');
 
 ?>
 
@@ -14,10 +17,6 @@ $textindent = $this->params->get('textindent');
 
     html {
         font-size: <?php echo $basefontsize;?>%;
-    }
-
-    h1.logo-text, .navdrawer-container h4, aside h4 {
-        color: <?php echo $brandtextcolor;?> !important;
     }
 
     <?php if ($textindent == 1): ?>
@@ -29,22 +28,59 @@ $textindent = $this->params->get('textindent');
         article p.bild + p,
         article p.lead + p,
         article p.bildlegende + p,
-        article p.autor + p {
-            text-indent: 0 !important;
-        }
-
+        article p.autor + p,
         article p.readmore {
             text-indent: 0 !important;
-            display: block;
-            padding: 1em 0 2em 0;
         }
 
+        article p.absatz {
+            text-indent: 0 !important;
+            margin-top: .75em !important;
+        }
         article p.readmore a {
             margin: 0 !important;
+
+        }
+
+        article p.alert, article p.box {
+            text-indent: 0 !important;
+            margin: 1em 0 !important;
+        }
+    <?php endif; ?>
+
+    <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+        button.actions {
+            width: 3em;
+        }
+    <?php else : ?>
+        button.actions {
+            display: none !important;
+            visibility: hidden;
+        }
+    <?php endif; ?>
+
+    <?php if ($this->countModules('sidebar')): ?>
+        button.sidebar-menu {
+            width: 3em;
+        }
+    <?php else : ?>
+        button.sidebar-menu {
+            display: none !important;
+            visibility: hidden;
         }
     <?php endif; ?>
 
     @media screen and (min-width: 48em){
+
+        <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+            .app-bar-actions {
+                height: 3em;
+            }
+        <?php else : ?>
+            .app-bar-actions {
+                height: 0;
+            }
+        <?php endif; ?>
 
         <?php if ($bodybackground): ?>
             body {
@@ -54,21 +90,18 @@ $textindent = $this->params->get('textindent');
         <?php endif; ?>
 
         main {
-            max-width: <?php echo $maxwidth;?>em;
+            -webkit-flex: <?php echo $mainwidth;?>;
+            -moz-flex: <?php echo $mainwidth;?>;
+            -ms-flex: <?php echo $mainwidth;?>;
+            flex: <?php echo $mainwidth;?>;
         }
 
-        <?php if ($this->countModules('sidebar')): ?>
-            .main-container {
-                width: 66.6666%;
-            }
-            .sidebar-container {
-                width: 33.3333%;
-            }
-        <?php else : ?>
-            .main-container {
-                width: 100%;
-            }
-        <?php endif; ?>
+        aside.sidebar-container {
+            -webkit-flex: <?php echo $asidewidth;?>;
+            -moz-flex: <?php echo $asidewidth;?>;
+            -ms-flex: <?php echo $asidewidth;?>;
+            flex: <?php echo $asidewidth;?>;
+        }
     }
 
 </style>

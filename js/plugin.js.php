@@ -53,7 +53,9 @@ $textindent = $this->params->get('textindent');
         var body = document.body;
         var appbarElement = querySelector('.app-bar');
         var menuBtn = querySelector('.menu');
-        var main = querySelector('main');
+        var menuSidebarBtn = querySelector('.sidebar-menu');
+        var menuActionsBtn = querySelector('.actions');
+        var main = querySelector('.layout');
 
         function closeMenu() {
             body.classList.remove('open');
@@ -69,41 +71,47 @@ $textindent = $this->params->get('textindent');
         }
 
         main.addEventListener('click', closeMenu);
+        menuSidebarBtn.addEventListener('click', closeMenu);
+        menuActionsBtn.addEventListener('click', closeMenu);
         menuBtn.addEventListener('click', toggleMenu);
-        navdrawerContainer.addEventListener('click', function (event) {
-            if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
-                closeMenu();
-            }
-        });
+        // navdrawerContainer.addEventListener('click', function (event) {
+        //     if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
+        //         closeMenu();
+        //    }
+        // });
     })();
 
+    // das selbe für aside
     <?php if ($this->countModules('sidebar')): ?>
-    // daselbe für aside
     (function () {
         'use strict';
 
         var querySelector = document.querySelector.bind(document);
 
         var sidebarContainer = querySelector('.sidebar-container');
-        var mybody = document.body;
+        var body = document.body;
         var appbarSelect = querySelector('.app-bar');
+        var menuBtn = querySelector('.menu');
         var menuSidebarBtn = querySelector('.sidebar-menu');
-        var mymain = querySelector('.main-container');
+        var menuActionsBtn = querySelector('.actions');
+        var main = querySelector('main');
 
         function closeMenu() {
-            mybody.classList.remove('aside-open');
+            body.classList.remove('aside-open');
             appbarSelect.classList.remove('aside-open');
             sidebarContainer.classList.remove('aside-open');
         }
 
         function toggleMenu() {
-            mybody.classList.toggle('aside-open');
+            body.classList.toggle('aside-open');
             appbarSelect.classList.toggle('aside-open');
             sidebarContainer.classList.toggle('aside-open');
             sidebarContainer.classList.add('aside-opened');
         }
 
-        mymain.addEventListener('click', closeMenu);
+        main.addEventListener('click', closeMenu);
+        menuBtn.addEventListener('click', closeMenu);
+        menuActionsBtn.addEventListener('click', closeMenu);
         menuSidebarBtn.addEventListener('click', toggleMenu);
         sidebarContainer.addEventListener('click', function (event) {
             if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
@@ -113,22 +121,55 @@ $textindent = $this->params->get('textindent');
     })();
     <?php endif; ?>
 
-    // double Tap to go by Osvaldas Valutis
-    // jQuery('nav li:has(ul)').doubleTapToGo();
+    // das selbe für actions
+    <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+    (function () {
+        'use strict';
 
-    // responsive slideshow von viljamis
-    <?php if ($this->countModules('slideshow')): ?>
-    jQuery(window).load(function() {
-        jQuery("#slider").responsiveSlides({
-            auto: true,
-            pager: false,
-            // manualControls: '#slider-pager',
-            nav: true,
-            speed: 1200,
-            namespace: "transparent-btns"
+        var querySelector = document.querySelector.bind(document);
+
+        var actionsContainer = querySelector('.app-bar-actions');
+        var body = document.body;
+        var appbarSelect = querySelector('.app-bar');
+        var menuBtn = querySelector('.menu');
+        var menuSidebarBtn = querySelector('.sidebar-menu');
+        var menuActionsBtn = querySelector('.actions');
+        var main = querySelector('.layout');
+
+
+        function closeMenu() {
+            body.classList.remove('actions-open');
+            appbarSelect.classList.remove('actions-open');
+            actionsContainer.classList.remove('actions-open');
+        }
+
+        function toggleMenu() {
+            body.classList.toggle('actions-open');
+            appbarSelect.classList.toggle('actions-open');
+            actionsContainer.classList.toggle('actions-open');
+            actionsContainer.classList.add('actions-opened');
+        }
+
+        function disableMenu() {
+            menuSidebarBtn.classList.remove('sidebar-menu');
+        }
+
+        main.addEventListener('click', closeMenu);
+        menuBtn.addEventListener('click', closeMenu);
+        menuSidebarBtn.addEventListener('click', closeMenu);
+        menuActionsBtn.addEventListener('click', toggleMenu);
+        actionsContainer.addEventListener('click', function (event) {
+            if (event.target.nodeName === 'SPAN' || event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
+                closeMenu();
+            }
         });
-    });
+    })();
     <?php endif; ?>
+
+
+    // double Tap to go by Osvaldas Valutis
+    jQuery('nav li:has(ul)').doubleTapToGo();
+
 
     // text-indent, Ausnahmen Erstzeileneinzug
     <?php if ($textindent == 1): ?>
@@ -271,18 +312,10 @@ $textindent = $this->params->get('textindent');
             }
         });
 
-        jQuery(".boxer.boxer_object").click(function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            jQuery.boxer( $('<div class="inline_content"><h2>More Content!</h2><p>This was created by jQuery and loaded into the new Boxer instance.</p></div>') );
-        });
-
         // mobile friendly
         jQuery(".boxer.boxer_mobile").boxer({
             mobile: true
         });
-
     });
 
     // sticky nav and header

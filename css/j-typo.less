@@ -5,11 +5,11 @@ textarea, pre, code, kbd, samp, var, tt {
 }
 
 body {
-	font-size: @font-size;      // 100% = 16px
+	font-size: @font-size-default;      // 100% = 16px
     font-weight: @book;         // wird nur noch bei Abweichungen angegeben
-    line-height: @line-height;  // wird nur noch bei Abweichungen angegeben
-	color: @body-copy-color;
-	background: @body-color;
+    line-height: @line-height-default;  // wird nur noch bei Abweichungen angegeben
+	color: @color-body-copy;
+	background: @color-body;
 	font-family: @body-font, Helvetica, Arial, 'Droid Sans', sans-serif;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%; /* Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
@@ -19,8 +19,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: @heading-font, Helvetica, Arial, 'Droid Sans', sans-serif;
+    font-weight: @medium;
     line-height: @line-height-heading;
-    color: @heading-color;
+    color: @color-heading;
 	margin-top: @paragraph-val;
 	margin-bottom: @paragraph-val / 2;
 	// text rendering
@@ -33,25 +34,36 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	&.subheading, small {
-		color: @subheading-color !important;
-		font-size: 87.5%;
+		color: @color-subheading !important;
 	}
 }
 
 h1 {
 	font-size: 2em;
+    &.subheading, small {
+        font-size: 2em * .9;
+    }
 }
 
 h2 {
 	font-size: 1.6666em;
+    &.subheading, small {
+        font-size: 1.6666em * .9;
+    }
 }
 
 h3 {
 	font-size: 1.5em;
+    &.subheading, small {
+        font-size: 1.5em * .9;
+    }
 }
 
 h4 {
 	font-size: 1.3333em;
+    &.subheading, small {
+        font-size: 1.3333em * .9;
+    }
 }
 
 h5 {
@@ -70,15 +82,15 @@ h6 {
 
 article {
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: @light !important;
-		color: @heading-color !important;
+		font-weight: @book !important;
+		color: @color-heading !important;
 	}
 }
 
 section {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: @medium;
-		color: @subheading-color;
+		color: @color-subheading;
 	}
 }
 
@@ -190,19 +202,19 @@ a {
 	line-height: inherit;
 	outline: 0;
 	text-decoration: none;
-	color: @link-color;
+	color: @color-link;
 
 	&:hover{
-		color: @link-hover-color;
+		color: @color-link-hover;
 		text-decoration: none;
 	}
 
 	&:focus {
-		color: @link-focus-color;
+		color: @color-link-focus;
 	}
 
 	&:visited {
-		color: @link-visited-color;
+		color: @color-link-visited;
 	}
 
 	img {
@@ -270,7 +282,7 @@ dl {
 	color: @gray;
 
 	dt {
-		font-weight: @semibold;
+		font-weight: @medium;
 		color: @gray-light;
 	}
 
@@ -398,7 +410,7 @@ ol {
 
 blockquote, blockquote p, q, cite {
 	font-size: 1.125em;
-	line-height: @line-height;
+	line-height: @line-height-default;
 	color: @concrete-dark;
 	font-style: italic;
 	font-weight: @light;
@@ -448,8 +460,8 @@ hr {
 
 article {
 	hr {
-		border-top: 1px solid @gray-light;
-		margin: @indent-val;
+		border: 1px solid @gray-light;
+		margin: @indent-val 0;
 		height: 0;
 	}
 }

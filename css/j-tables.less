@@ -12,7 +12,7 @@ table {
 
 	caption {
 		font-size: 87.5%;
-		color: @midnightblue;
+		color: @colorIndigoA700;
 		margin-left: .5em;
 	}
 
@@ -36,7 +36,8 @@ th, td {
 }
 
 thead th, tfoot th, tbody th {
-	text-align: left;
+    font-weight: normal;
+    text-align: left;
 	color: @gray-light;
 	border-bottom: 1px @gainsboro-darker solid;
 }
@@ -55,6 +56,10 @@ tbody, tfoot {
 	td {
 		text-align: left;
 		border-top: 1px solid @gainsboro-darker;
+
+        span.badge {
+            font-weight: normal;
+        }
 	}
 
 	// highlight row on mouse over

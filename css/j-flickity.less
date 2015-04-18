@@ -47,10 +47,11 @@ http://flickity.metafizzy.co
   top: 50%;
   width: 44px;
   height: 44px;
+    margin: 0; // adhoc
   border: none;
   border-radius: 50%;
   background: white;
-  background: hsla(0, 0%, 100%, 0.75);
+  background: hsla(0, 0%, 100%, 0.66); // adhoc
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
@@ -58,20 +59,22 @@ http://flickity.metafizzy.co
           transform: translateY(-50%);
 }
 
-.flickity-prev-next-button:hover { background: white; }
+.flickity-prev-next-button:hover {
+    background: @smoke;
+}
 
 .flickity-prev-next-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 5px #09F;
+    outline: none;
+
 }
 
 .flickity-prev-next-button:active {
   filter: alpha(opacity=60); /* IE8 */
-  opacity: 0.6;
+  opacity: 0.6
 }
 
-.flickity-prev-next-button.previous { left: 10px; }
-.flickity-prev-next-button.next { right: 10px; }
+.flickity-prev-next-button.previous { left: .5em; }
+.flickity-prev-next-button.next { right: .5em; }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
   left: auto;
@@ -138,25 +141,41 @@ http://flickity.metafizzy.co
   opacity: 1;
 }
 
-// adhocgrafx
+
+/* big buttons, no circle */
+.flickity-prev-next-button {
+    // width: 100px;
+    // height: 100px;
+    background: transparent;
+    .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
+}
+.flickity-prev-next-button:hover {
+    background: @color-accent;
+    .box-shadows(0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+    fill: @smoke;
+}
+.flickity-prev-next-button.no-svg {
+    color: @smoke;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+    display: none;
+}
+
+// adhoc klassen für boxen
 
 // cell sizes
 .gallery-cell {
-    margin-right: 1em;
+    width: 100%;
 
-    &.size-max {
-        width: 100%;
-    }
-    &.size-large {
-        width: 66.666%;
-    }
-
-    &.size-half {
-        width: 50%;
-    }
-
+    &.size-max,
+    &.size-large,
+    &.size-half,
     &.size-third {
-        width: 33.333%;
+        width: 100%;
     }
 
     &.height-large {
@@ -173,7 +192,7 @@ http://flickity.metafizzy.co
 
     // background colors
     &.box {
-        padding: 1em;
+        padding: 1em 4em;
         color: @smoke;
 
         &.red {
@@ -233,4 +252,44 @@ http://flickity.metafizzy.co
     }
 }
 
+.art-gallery {
+    background: @gray-lighter;
+    padding: 0 0 .5em 0;
+}
 
+.gallery-main {
+
+    img {
+        padding: 6px;
+    }
+}
+
+.gallery-nav {
+
+    img {
+        padding: 3px;
+    }
+}
+
+// media queries // 48 x 16 = 768
+@media screen and (min-width: 48em) {
+
+    .gallery-cell {
+        margin-right: 1em;
+
+        &.size-max {
+            width: 100%;
+        }
+        &.size-large {
+            width: 66.666%;
+        }
+
+        &.size-half {
+            width: 50%;
+        }
+
+        &.size-third {
+            width: 33.333%;
+        }
+    }
+}

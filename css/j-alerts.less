@@ -1,27 +1,127 @@
 .alert {
-	border: 1px solid @gray;
-	background-color:@whitesmoke;
-	.border-radius(.2em);
-	margin-bottom: 2em;
-	padding: .5em 1em;
+    color: @concrete;
+    background-color: @smoke;
+    border: 1px solid @concrete;
+    margin-bottom: 2em;
+    padding: .5em 1em;
+
+    h4.alert-heading, a.close {
+        color: @concrete;
+    }
 }
 
 .alert-warning {
-	border-color: @orange-dark;
-	color: @orange;
+    color: @color-warning;
+    border-color: @color-warning;
+
+    h4.alert-heading, a.close {
+        color: @color-warning;
+    }
 }
 
 .alert-error {
-	border-color: @red-dark;
-	color: @red;
+    color: @color-error;
+    border-color: @color-error;
+
+    h4.alert-heading, a.close {
+        color: @color-error;
+    }
 }
 
 .alert-success {
-	border-color: @turquoise-dark;
-	color: @turquoise;
+    color: @color-success;
+    border-color: @color-success;
+
+    h4.alert-heading, a.close {
+        color: @color-success;
+    }
 }
 
 .alert-info {
-	border-color: @blue-dark;
-	color: @blue;
+    color: @color-info;
+    border-color: @color-info;
+
+    h4.alert-heading, a.close {
+        color: @color-info;
+    }
 }
+
+// helper classes
+// background colors
+&.box {
+    color: @smoke;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+&.red {
+    background: @colorRedA400;
+}
+&.pink {
+    background: @colorPinkA400;
+}
+&.purple {
+    background: @colorPurpleA400;
+}
+&.deeppurple {
+    background: @colorDeepPurpleA400;
+}
+&.indigo {
+    background: @colorIndigoA400;
+}
+&.blue {
+    background: @colorBlueA400;
+}
+&.lightblue {
+    background: @colorLightBlueA400;
+}
+&.cyan {
+    background: @colorCyanA400;
+}
+&.teal {
+    background: @colorTealA400;
+}
+&.green {
+    background: @colorGreenA400;
+}
+&.lightgreen {
+    background: @colorLightGreenA400;
+}
+&.lime {
+    background: @colorLimeA400;
+}
+&.yellow {
+    background: @colorYellowA400;
+}
+&.amber {
+    background: @colorAmberA400;
+}
+&.orange {
+    background: @colorOrangeA400;
+}
+&.deeporange {
+    background: @colorDeepOrangeA400;
+}
+&.brown {
+    background: @colorBrown600;
+}
+&.bluegrey {
+    background: @colorBlueGrey600;
+}
+
+// goldener schnitt
+.width-g-minor, .width-g-major {
+    width: 100%;
+
+}
+
+@media screen and (min-width: 48em) {
+
+    .width-g-minor {
+        width: 38.2%;
+    }
+    .width-g-major {
+        width: 61.8%;
+    }
+}
+
