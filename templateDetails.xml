@@ -70,7 +70,7 @@
     <config>
         <fields name="params">
             <fieldset name="options">
-                <field name="Logo and Background Image"
+                <field name="Logo Image"
                        type="spacer"
                        hr="false" >
                 </field>
@@ -78,11 +78,6 @@
                        type="media"
                        label="Logo"
                        description="Select logo image" >
-                </field>
-                <field name="bodybackground"
-                       type="media"
-                       label="Body Background Image"
-                       description="Select body background image" >
                 </field>
 
                 <field name="Typography"

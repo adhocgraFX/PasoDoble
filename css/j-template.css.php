@@ -2,8 +2,6 @@
 header('Content-type: text/css');
 
 // get template params
-$bodybackground = $this->params->get('bodybackground');
-
 $mainwidth = $this->params->get('mainwidth');
 $asidewidth = $this->params->get('asidewidth');
 
@@ -79,13 +77,6 @@ $textresizer = $this->params->get('textresizer');
         <?php else : ?>
             .app-bar-actions {
                 height: 0;
-            }
-        <?php endif; ?>
-
-        <?php if ($bodybackground): ?>
-            body {
-                background: url(<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($bodybackground);?>) center top no-repeat fixed;
-                background-size: cover;
             }
         <?php endif; ?>
 
