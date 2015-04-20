@@ -38,24 +38,17 @@ JHtml::_('bootstrap.framework');
 $user = JFactory::getUser();
 
 if ($view == "form" or $layout == "edit"):
-    // template css
     // $doc->addStyleSheet($tpath.'/css/jui-bootstrap/jui-template.css');
+    // template css
+    $doc->addStyleSheet($tpath.'/css/j-template.css');
 else:
     // template css
     $doc->addStyleSheet($tpath.'/css/j-template.css');
-endif;
-
-// modernizr mit html5-shiv must be in the head
-$doc->addScript($tpath.'/js/modernizr-2.8.2.min.js');
-?>
+endif;?>
 
 <!doctype html>
 
-<!-- modernizr -->
-<!--[if IEMobile]> <html lang="<?php echo $this->language; ?>" class="iemobile"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->language; ?>" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
+<html lang="<?php echo $this->language; ?>">
 
 <head>
 
