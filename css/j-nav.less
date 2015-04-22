@@ -39,19 +39,19 @@ nav {
 			}
 
 			a {
-				color: @smoke;
+				color: @color-primary-text;
 				display: block;
 				padding: 1em;
 				border-bottom: 1px solid @color-brand-darker;
 
 				&:hover {
-					color: @smoke;
+					color: @color-primary-text;
 					background: @color-brand-lighter;
 					text-decoration: none;
 				}
 
 				&:focus, &:active {
-					color: @whitesmoke;
+					color: @color-primary-text;
 					background: @color-brand-dark;
 				}
 			}
@@ -71,12 +71,9 @@ nav {
         margin: 0;
         list-style-type: none;
         position: relative;
-        top: 0;
-        left: 0;
         z-index: 10000;
 
         li {
-            float: inherit;
             text-align: left;
             background: desaturate(@color-brand, 10%);
 
@@ -124,7 +121,6 @@ nav {
 
 			li {
                 .align-self(center);
-                // float: left;
 
                 &.current, &.active {
 
@@ -132,7 +128,6 @@ nav {
 
                 &.deeper, &.parent {
                     height: 4em;
-                    width: 9em; // todo wg nav-child nicht optimal
 
                     a:after {
                         content: "";
@@ -156,13 +151,11 @@ nav {
             display: block;
         }
 
+
         ul.nav-child {
-            position: relative;
-            top: -.5em;
-			left: .5em;
-            margin: 0;
+            position: absolute;
+            margin: -.5em 0 0 .5em;
 			padding: .5em 0;
-            min-width: 12em; // todo nicht optimal
             background: @smoke;
 			.border-radius(@baseBorderRadius);
             border: 1px solid @color-primary;
@@ -171,7 +164,6 @@ nav {
             filter: Alpha(Opacity=90);
 
 			li {
-				float: inherit;
 				text-align: left;
                 background: @color-brand;
 

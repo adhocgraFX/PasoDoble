@@ -18,16 +18,16 @@
 
 // primary- und accent-color ala material design
 @color-primary:         @colorIndigo500;
-@color-accent:          @colorAmber700;
+@color-accent:          @colorAmber500;
 
-// brand und accent text color je nach primary und accent color
-@color-brand-text:      @smoke;
-@color-accent-text:     @smoke;
+// primary und accent text color je nach primary und accent color
+@color-primary-text:    @smoke;
+@color-accent-text:     @whitesmoke;
 
 // section colors
-@color-slider-back:         @colorBlueGrey50;
-@color-top-row-back:        @smoke;
-@color-bottom-row-back:     @colorBlueGrey100;
+@color-slider-back:         @gainsboro-light;
+@color-top-row-back:        @gainsboro;
+@color-bottom-row-back:     @gainsboro-dark;
 @color-aside-back:          @smoke; // on desktop, on mobile > @primary-color
 @color-breadcrumbs-back:    @colorIndigo300;
 
@@ -35,7 +35,7 @@
 // editing not recommended
 //
 // color sync
-// brand color mit primary in color sync
+// brand color mit primary color in sync
 @color-brand:           @color-primary;
 @color-brand-light:     lighten(@color-brand, 5%);
 @color-brand-lighter:   lighten(@color-brand, 10%);

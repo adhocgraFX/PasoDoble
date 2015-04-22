@@ -61,7 +61,7 @@ body {
         min-width: 3em;
         height: 3em;
         background-image: none;
-        color: @smoke;
+        color: @color-primary-text;
         background-color: transparent;
         padding: 0;
         margin: 0;
@@ -74,15 +74,18 @@ body {
         .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
 
         &:hover {
+            color: @color-accent-text;
             background-color: @color-link-hover;
         }
 
         &:focus {
+            color: @color-accent-text;
             background-color: @color-link-focus;
             outline: 0;
         }
 
         &:active {
+            color: @color-accent-text;
             background-color: @color-link-active;
         }
 
@@ -145,7 +148,7 @@ body {
         width: 100%;
 
         h1.logo-text {
-            color: @color-brand-text;
+            color: @color-primary-text;
             font-size: 1.5em;
             line-height: 2.25;
             font-weight: 300;
@@ -201,7 +204,7 @@ body {
     h4 {
         font-size: 1em;
         background-color: @color-primary;
-        color: @color-brand-text;
+        color: @color-primary-text;
         height: 3em;
         padding: 1em;
         margin: 0;
@@ -222,7 +225,7 @@ body {
     h4.sidebar-text {
         font-size: 1em;
         background-color: @color-primary;
-        color: @color-brand-text;
+        color: @color-primary-text;
         height: 3em;
         padding: 1em;
         margin: 0;

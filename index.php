@@ -1,7 +1,7 @@
 <?php defined( '_JEXEC' ) or die;
 
 /**
- * @copyright	Paso Doble responsive Joomla! 3.3 template © 2015 adhocgraFX / Johannes Hock - All Rights Reserved.
+ * @copyright	Paso Doble responsive Joomla! 3 template © 2015 adhocgraFX / Johannes Hock - All Rights Reserved.
  * @license		GNU/GPL
  **/
 
@@ -79,11 +79,10 @@ endif;?>
         });
   </script>
 
-  <!-- Add to homescreen
-  <link rel="manifest" href="manifest.json">
-  -->
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Fallback to homescreen for Chrome <39 on Android -->
+  <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="<?php echo htmlspecialchars($app->getCfg('sitename')); ?>">
   <link rel="icon" sizes="192x192" href="<?php echo $tpath; ?>/images/touch/chrome-touch-icon-192x192.png">
@@ -204,7 +203,9 @@ endif;?>
 
 <jdoc:include type="modules" name="debug" />
 
-<!--  load plugin scripts -->
+<!--  load plugin scripts
+<script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.min.js"></script>
+-->
 <script type="text/javascript" src="<?php echo $tpath.'/js/template.js.php';?>"></script>
 
 <!-- load plugin options -->
