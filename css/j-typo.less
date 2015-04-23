@@ -163,38 +163,6 @@ article {
 	}
 }
 
-// TODO zur Diskussion: text indent nur in article
-// text indent nach j template css php verschoben, wg options
-/*
-article {
-	p {
-		& + p {
-			// siblings indentation
-			text-indent: @indent-val;
-			margin-top: -@paragraph-val;
-			// text-align: justify;
-		}
-
-		&.bild + p,
-		&.lead + p,
-		&.bildlegende + p,
-		&.autor + p {
-			text-indent: 0 !important;
-		}
-
-		&.readmore {
-			text-indent: 0 !important;
-			display: block;
-			padding: 1em 0 2em 0;
-
-			a {
-				margin: 0 !important;
-			}
-		}
-	}
-}
-*/
-
 //  Links
 //  TODO zur Diskussion: für article unterscheiden
 
@@ -206,7 +174,7 @@ a {
 
 	&:hover{
 		color: @color-link-hover;
-		text-decoration: none;
+        text-decoration: none;
 	}
 
 	&:focus {
