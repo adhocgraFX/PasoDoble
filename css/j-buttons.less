@@ -158,12 +158,14 @@ button, .btn {
     &:hover,
     &:focus {
         color: @color-link-hover;
-        background: @smoke; //@gainsboro-light;
+        background: @smoke;
+        .box-shadows(0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12));
     }
     &.active,
     &:active {
         color: @color-link-visited;
-        background: @gainsboro-light; //@gainsboro-dark;
+        background: @smoke;
+        .box-shadows(0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19));
     }
 }
 
@@ -265,6 +267,6 @@ button, .btn {
 
 // Mini
 .mini, .btn-mini {
-    padding: .2em .5em .15em .5em;
+    padding: .275em .5em .2em .5em;
     font-size: @font-size-mini;
 }

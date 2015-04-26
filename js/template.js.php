@@ -19,8 +19,10 @@ require('jquery.textresizer.min.js');
 // doubletaptogo > hover lösung für drop downs
 require('doubletaptogo.min.js');
 
-// boxer > modal windows und image galeries
-require('jquery.fs.boxer.min.js');
+// formstone lightbox > modal windows und image galeries
+require('core.js');
+require('transition.js');
+require('lightbox.js');
 
 // flickity by dessandro
 require('flickity.pkgd.min.js');

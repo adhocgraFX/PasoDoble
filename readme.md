@@ -5,11 +5,17 @@ PasoDoble
 
 * less 
 * adhocgrafx template [styleguide](https://github.com/adhocgraFX/styleguide "styleguide")
-* lightweight off-canvas system for nav aside and app-bar
+* skeleton made with
+    *  [BLANK template](http://blank.vc/de/ "BLANK template")
+    *  [WEB STARTER KIT](https://github.com/google/web-starter-kit "WEB STARTER KIT")
+* lightweight off-canvas system for 
+    * nav 
+    * aside and 
+    * app-bar
 * flexbox layout
-* responsive touchable slides > [flickity](http://flickity.metafizzy.co/ "flickity")
-* modal media boxes
-* analytics
+* responsive touchable slides: [flickity](http://flickity.metafizzy.co/ "flickity")
+* modal media boxes: [formstone lightbox](http://formstone.it/components/lightbox/ "formstone lightbox")
+* analytics / options
 * font resizer
 
 ###Work in progress!
@@ -18,6 +24,4 @@ PasoDoble
 [pasodoble](http://pasodoble.adhocgrafx.de "PasoDoble")
 
 ### todos:
-* nav styles to optimize
 * ...
-

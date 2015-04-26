@@ -289,33 +289,9 @@ $textindent = $this->params->get('textindent');
     });
     <?php endif; ?>
 
-    // boxer
+    // formstone lightbox
     jQuery(document).ready(function() {
-        jQuery(".boxer").not(".retina, .boxer_fixed, .boxer_top, .boxer_format, .boxer_mobile, .boxer_object").boxer();
-
-        jQuery(".boxer.boxer_fixed").boxer({
-            fixed: true
-        });
-
-        jQuery(".boxer.boxer_top").boxer({
-            top: 50
-        });
-
-        // retina display
-        jQuery(".boxer.retina").boxer({
-            retina: true
-        });
-
-        jQuery(".boxer.boxer_format").boxer({
-            formatter: function($target) {
-                return '<h3>' + $target.attr("title") + "</h3>";
-            }
-        });
-
-        // mobile friendly
-        jQuery(".boxer.boxer_mobile").boxer({
-            mobile: true
-        });
+        jQuery("a.lightbox").lightbox();
     });
 
     // sticky nav and header
