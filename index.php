@@ -138,7 +138,6 @@ endif; ?>
     <!-- load css options -->
     <?php include_once('css/j-template.css.php'); ?>
 
-
 </head>
 
 <body
