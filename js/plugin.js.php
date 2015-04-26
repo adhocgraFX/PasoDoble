@@ -290,9 +290,7 @@ $textindent = $this->params->get('textindent');
     <?php endif; ?>
 
     // formstone lightbox
-    jQuery(document).ready(function() {
-        jQuery("a.lightbox").lightbox();
-    });
+    jQuery(".lightbox").lightbox();
 
     // sticky nav and header
     jQuery(document).ready(function() {

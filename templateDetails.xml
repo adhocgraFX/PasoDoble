@@ -108,7 +108,7 @@
                     <option value="0">JNO</option>
                 </field>
 
-                <field name="Max Main Content and Aside Width"
+                <field name="Main Content and Aside Width / flex ratio"
                        type="spacer"
                        hr="false" >
                 </field>
