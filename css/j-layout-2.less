@@ -135,15 +135,18 @@ footer,
 section.top,
 section.bottom {
     .flex-display;
-	.flex-flow(row wrap);
+	//.flex-flow(row wrap);
+    .flex-direction(row);
+    .flex-wrap(wrap);
     .justify-content(center);
 
 	.module {
-		.flex(1);
+		.flex(auto);
 		margin: .5em;
         min-width: 12em;
         max-width: 24em; // > je nach bedarf
-
+        width: 20em;
+        /*
         &.size-2 {
             .flex(2);
         }
@@ -155,6 +158,7 @@ section.bottom {
         &.size-4 {
             .flex(4);
         }
+        */
     }
 }
 
@@ -169,7 +173,9 @@ section.bottom {
 
     section.main-container {
         .flex-display;
-        .flex-flow(row nowrap);
+        //.flex-flow(row wrap);
+        .flex-direction(row);
+        .flex-wrap(wrap);
         .justify-content(space-between);
         .align-items(stretch);
 
@@ -186,17 +192,19 @@ section.bottom {
             background: @color-aside-back;
             margin: 0;
             .flex-display;
-            .flex-flow(row wrap);
+            //.flex-flow(row wrap);
+            .flex-direction(row);
+            .flex-wrap(wrap);
             .justify-content(flex-start);
             .align-items(stretch);
             .align-content(flex-start);
 
             .module {
-                .flex(1);
+                .flex(auto);
                 margin: .5em;
                 min-width: 11em;
                 // max-width: je nach bedarf
-
+                /*
                 &.size-2 {
                     .flex(2);
                 }
@@ -208,6 +216,7 @@ section.bottom {
                 &.size-4 {
                     .flex(4);
                 }
+                */
             }
 
         }
