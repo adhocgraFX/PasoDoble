@@ -292,25 +292,4 @@ $textindent = $this->params->get('textindent');
     // formstone lightbox
     jQuery(".lightbox").lightbox();
 
-    // sticky nav and header
-    jQuery(document).ready(function() {
-        var stickyNavTop = jQuery('.navdrawer-container').offset().top;
-
-        var stickyNav = function(){
-            var scrollTop = jQuery(window).scrollTop();
-
-            if (scrollTop > stickyNavTop) {
-                jQuery('.navdrawer-container').addClass('sticky');
-            } else {
-                jQuery('.navdrawer-container').removeClass('sticky');
-            }
-        };
-
-        stickyNav();
-
-        jQuery(window).scroll(function() {
-            stickyNav();
-        });
-    });
-
 </script>
