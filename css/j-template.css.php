@@ -46,28 +46,6 @@ $textresizer = $this->params->get('textresizer');
         }
     <?php endif; ?>
 
-    <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
-        button.actions {
-            width: 3em;
-        }
-    <?php else : ?>
-        button.actions {
-            display: none !important;
-            visibility: hidden;
-        }
-    <?php endif; ?>
-
-    <?php if ($this->countModules('sidebar')): ?>
-        button.sidebar-menu {
-            width: 3em;
-        }
-    <?php else : ?>
-        button.sidebar-menu {
-            display: none !important;
-            visibility: hidden;
-        }
-    <?php endif; ?>
-
     @media screen and (min-width: 48em){
 
         <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>

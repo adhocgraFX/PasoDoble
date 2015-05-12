@@ -150,13 +150,10 @@ endif; ?>
             <div class="textresizer-container">
                 <ul class="textresizer" id="textsizer-embed">
                     <li><a href="#nogo" class="small-text" title="small"><span class="icon-chevron-down"></span>
-
                             <p hidden>small</p></a></li>
                     <li><a href="#nogo" class="default-text" title="default"><span class="icon-format-size"></span>
-
                             <p hidden>default</p></a></li>
                     <li><a href="#nogo" class="large-text" title="large"><span class="icon-chevron-up"></span>
-
                             <p hidden>large</p></a></li>
                 </ul>
             </div>

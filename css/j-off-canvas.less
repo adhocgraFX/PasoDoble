@@ -138,7 +138,6 @@ body {
     }
 
     a {
-
         text-decoration: none;
         font-weight: normal;
         text-align: center;
@@ -291,8 +290,12 @@ body {
         clear: both;
     }
 
-    button.menu, button.sidebar-menu, button.actions {
-        .hidden
+    button.menu, button.sidebar-menu {
+        .hidden;
+    }
+
+    button.actions {
+        .hidden;
     }
 
     .navdrawer-container {
@@ -328,10 +331,6 @@ body {
         transform: translate(0, 0);
         -webkit-transition: none;
         transition: none;
-
-        h4.sidebar-text {
-            .visuallyhidden;
-        }
     }
 
     .layout {
