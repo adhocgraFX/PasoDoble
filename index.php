@@ -165,18 +165,12 @@ endif; ?>
         <?php endif; ?>
     </section>
     <section class="app-bar-container">
-        <?php if ($this->countModules('nav')): ?>
-            <button class="menu" aria-label="Navigation"></button>
-        <?php endif; ?>
+        <button class="menu" aria-label="Navigation"></button>
         <a href="<?php echo $this->baseurl ?>">
             <h1 class="logo-text"><?php echo htmlspecialchars($sitename); ?></h1>
         </a>
-        <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
-            <button class="actions" aria-label="actions"></button>
-        <?php endif; ?>
-        <?php if ($this->countModules('sidebar')): ?>
-            <button class="sidebar-menu" aria-label="Sidebar"></button>
-        <?php endif; ?>
+        <button class="actions" aria-label="actions"></button>
+        <button class="sidebar-menu" aria-label="Sidebar"></button>
     </section>
 </header>
 
