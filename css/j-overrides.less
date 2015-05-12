@@ -93,8 +93,18 @@ dl.article-info {
 // eigene varablen für Farbfamilien einbauen
 
 //readmore
+
+p.readmore {
+    text-align: right;
+
+    a {
+        margin: 0;
+    }
+}
+
+/*.
 p.readmore a {
-	/*.border-radius(@baseBorderRadius);
+	border-radius(@baseBorderRadius);
     padding: .5em;
     font-size: 87.5%;
     font-weight: normal;
@@ -114,8 +124,9 @@ p.readmore a {
 
 	span {
 		padding-left: .5em;
-	}*/
+	}
 }
+*/
 
 // flat allg stil
 .flat {
@@ -236,7 +247,7 @@ article {
     background: transparent;
 
     > h2 {
-        margin-top: 0;
+        //margin-top: 0;
     }
 }
 
@@ -248,7 +259,7 @@ article {
 	background: transparent;
 
 	> h2 {
-        margin: .25em 0;
+        //margin: .25em 0;
 	}
 }
 
@@ -272,7 +283,7 @@ article {
 
 .page-header, .subheading-category {
 	padding: 0;
-	margin: 0;
+	margin: 0 !important;
 	border-bottom: 0 !important;
 
 	h1, h2, h2.subtitle {
@@ -283,7 +294,7 @@ article {
 .item-title {
 	line-height: @line-height-heading;
 	padding: 0;
-	margin: 0 0 @small-paragraph-val 0 ;
+	// margin: 0 0 @small-paragraph-val 0 ;
 	border-bottom: 0 !important;
 }
 

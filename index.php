@@ -168,12 +168,18 @@ endif; ?>
         <?php endif; ?>
     </section>
     <section class="app-bar-container">
-        <button class="menu" aria-label="Navigation"></button>
+        <?php if ($this->countModules('nav')): ?>
+            <button class="menu" aria-label="Navigation"></button>
+        <?php endif; ?>
         <a href="<?php echo $this->baseurl ?>">
             <h1 class="logo-text"><?php echo htmlspecialchars($sitename); ?></h1>
         </a>
-        <button class="actions" aria-label="actions"></button>
-        <button class="sidebar-menu" aria-label="Sidebar"></button>
+        <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+            <button class="actions" aria-label="actions"></button>
+        <?php endif; ?>
+        <?php if ($this->countModules('sidebar')): ?>
+            <button class="sidebar-menu" aria-label="Sidebar"></button>
+        <?php endif; ?>
     </section>
 </header>
 
@@ -188,8 +194,9 @@ endif; ?>
     <?php else: ?>
         <h4>Navigation</h4>
     <?php endif; ?>
-
-    <jdoc:include type="modules" name="nav"/>
+    <?php if ($this->countModules('nav')): ?>
+        <jdoc:include type="modules" name="nav"/>
+    <?php endif; ?>
 </nav>
 
 <section class="layout block-group">

@@ -56,7 +56,7 @@
 		<position>slideshow</position>
 		<position>breadcrumbs</position>
 		<position>sidebar</position>
-		<position>top_row</position>
+        <position>top_row</position>
 		<position>bottom_row</position>
 		<position>footer</position>
 		<position>debug</position>
