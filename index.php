@@ -205,8 +205,10 @@ endif; ?>
 
     <section class="main-container">
         <main role="main">
-            <jdoc:include type="message"/>
-            <jdoc:include type="component"/>
+            <section class="content">
+                <jdoc:include type="message"/>
+                <jdoc:include type="component"/>
+            </section>
         </main>
         <?php if ($this->countModules('sidebar')): ?>
             <aside class="sidebar-container" role="complementary">

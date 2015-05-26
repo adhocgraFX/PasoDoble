@@ -177,7 +177,7 @@ section.bottom {
         main {
             margin: 0 auto;
 
-            div, article {
+            section.content {
                 margin: .5em auto;
                 max-width: 32em;
             }
@@ -202,13 +202,9 @@ section.bottom {
     }
 
     body.slider {
-
-        section.main-container {
-
-            main {
-                div, article {
-                    max-width: 100% !important;
-                }
+        section.main-container main {
+            section.content  {
+                max-width: 100% !important;
             }
         }
     }
@@ -259,7 +255,7 @@ section.bottom {
 @media screen and (min-width: 80em) {
 
     section.main-container main {
-        div, article {
+        section.content  {
             max-width: 36em;
         }
     }
