@@ -22,6 +22,7 @@
 			<li>breadcrumbs</li>
 			<li>slideshow</li>
 			<li>top_row</li>
+			<li>left_bar</li>
 			<li>sidebar</li>
 			<li>bottom_row</li>
 			<li>footer</li>
@@ -55,7 +56,8 @@
 		<position>search</position>
 		<position>slideshow</position>
 		<position>breadcrumbs</position>
-		<position>sidebar</position>
+        <position>left_bar</position>
+        <position>sidebar</position>
         <position>top_row</position>
 		<position>bottom_row</position>
 		<position>footer</position>
@@ -109,22 +111,30 @@
                     <option value="0">JNO</option>
                 </field>
 
-                <field name="Main Content and Aside Width / flex ratio"
+                <field name="Main Content and Aside Widths / Flex Ratio"
                        type="spacer"
                        hr="false" >
+                </field>
+                <field name="leftwidth"
+                       type="text"
+                       filter="integer"
+                       default="5"
+                       label="Left Sidebar Width"
+                       description="Left Sidebar Width / Flex Factor"
+                       size="7" >
                 </field>
                 <field name="mainwidth"
                        type="text"
                        filter="integer"
-                       default="75"
+                       default="13"
                        label="Content Width"
-                       description="Content Width Flex Factor"
+                       description="Content Width / Flex Factor"
                        size="7" >
                 </field>
                 <field name="asidewidth"
                        type="text"
                        filter="integer"
-                       default="25"
+                       default="8"
                        label="Aside Width"
                        description="Aside Width Flex Factor"
                        size="7" >

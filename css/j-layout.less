@@ -183,13 +183,14 @@ section.bottom {
             }
         }
 
-        aside.sidebar-container {
+        aside.sidebar-container,
+        aside.leftbar-container {
             background: @color-aside-back;
             margin: 0;
             .flex-display;
             .flex-flow(row wrap);
             .justify-content(flex-start);
-            .align-items(stretch);
+            .align-items(flex-start);
             .align-content(flex-start);
 
             .module {
@@ -231,23 +232,16 @@ section.bottom {
         width: 25%;
     }
 
-    /*
-    section.top, section.bottom, section.wrapper-push, footer, header, nav {
-	    opacity: 0.90;
-	    filter: Alpha(Opacity=90);
-    }
-    */
-
     .logo-image {
         position: absolute;
         left: 0;
         top: -6em;
         width: 12em;
-        height: 6em; // 10em;
+        height: 6em;
 
         a {
-            height: 4em; // 10em;
-            margin: 1em 0; // 0;
+            height: 4em;
+            margin: 1em 0;
         }
     }
 }

@@ -165,6 +165,7 @@ endif; ?>
         <?php endif; ?>
     </section>
     <section class="app-bar-container">
+        <button class="leftbar-menu" aria-label="Sidebar"></button>
         <button class="menu" aria-label="Navigation"></button>
         <a href="<?php echo $this->baseurl ?>">
             <h1 class="logo-text"><?php echo htmlspecialchars($sitename); ?></h1>
@@ -204,6 +205,12 @@ endif; ?>
     <?php endif; ?>
 
     <section class="main-container">
+        <?php if ($this->countModules('left_bar')): ?>
+            <aside class="leftbar-container" role="complementary">
+                <h4 class="sidebar-text">Sidebar</h4>
+                <jdoc:include type="modules" name="left_bar" style="jduo"/>
+            </aside>
+        <?php endif; ?>
         <main role="main">
             <section class="content">
                 <jdoc:include type="message"/>
@@ -243,9 +250,7 @@ endif; ?>
 
 <jdoc:include type="modules" name="debug"/>
 
-<!--  load plugin scripts
-<script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.min.js"></script>
--->
+<!-- load plugin scripts -->
 <script type="text/javascript" src="<?php echo $tpath . '/js/template.js.php'; ?>"></script>
 
 <!-- load plugin options -->

@@ -54,6 +54,7 @@ $textindent = $this->params->get('textindent');
         var appbarElement = querySelector('.app-bar');
         var menuBtn = querySelector('.menu');
         var menuSidebarBtn = querySelector('.sidebar-menu');
+        var menuLeftbarBtn = querySelector('.leftbar-menu');
         var menuActionsBtn = querySelector('.actions');
         var main = querySelector('.layout');
 
@@ -72,6 +73,7 @@ $textindent = $this->params->get('textindent');
 
         main.addEventListener('click', closeMenu);
         menuSidebarBtn.addEventListener('click', closeMenu);
+        menuLeftbarBtn.addEventListener('click', closeMenu);
         menuActionsBtn.addEventListener('click', closeMenu);
         menuBtn.addEventListener('click', toggleMenu);
         // navdrawerContainer.addEventListener('click', function (event) {
@@ -121,6 +123,46 @@ $textindent = $this->params->get('textindent');
     })();
     <?php endif; ?>
 
+    // das selbe für leftbar
+    <?php if ($this->countModules('left_bar')): ?>
+    (function () {
+        'use strict';
+
+        var querySelector = document.querySelector.bind(document);
+
+        var leftbarContainer = querySelector('.leftbar-container');
+        var body = document.body;
+        var appbarSelect = querySelector('.app-bar');
+        var menuBtn = querySelector('.menu');
+        var menuLeftbarBtn = querySelector('.leftbar-menu');
+        var menuActionsBtn = querySelector('.actions');
+        var main = querySelector('main');
+
+        function closeMenu() {
+            body.classList.remove('left-open');
+            appbarSelect.classList.remove('left-open');
+            leftbarContainer.classList.remove('left-open');
+        }
+
+        function toggleMenu() {
+            body.classList.toggle('left-open');
+            appbarSelect.classList.toggle('left-open');
+            leftbarContainer.classList.toggle('left-open');
+            leftbarContainer.classList.add('left-opened');
+        }
+
+        main.addEventListener('click', closeMenu);
+        menuBtn.addEventListener('click', closeMenu);
+        menuActionsBtn.addEventListener('click', closeMenu);
+        menuLeftbarBtn.addEventListener('click', toggleMenu);
+        leftbarContainer.addEventListener('click', function (event) {
+            if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
+                closeMenu();
+            }
+        });
+    })();
+    <?php endif; ?>
+
     // das selbe für actions
     <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
     (function () {
@@ -133,6 +175,7 @@ $textindent = $this->params->get('textindent');
         var appbarSelect = querySelector('.app-bar');
         var menuBtn = querySelector('.menu');
         var menuSidebarBtn = querySelector('.sidebar-menu');
+        var menuLeftbarBtn = querySelector('.leftbar-menu');
         var menuActionsBtn = querySelector('.actions');
         var main = querySelector('.layout');
 
@@ -150,13 +193,10 @@ $textindent = $this->params->get('textindent');
             actionsContainer.classList.add('actions-opened');
         }
 
-        function disableMenu() {
-            menuSidebarBtn.classList.remove('sidebar-menu');
-        }
-
         main.addEventListener('click', closeMenu);
         menuBtn.addEventListener('click', closeMenu);
         menuSidebarBtn.addEventListener('click', closeMenu);
+        menuLeftbarBtn.addEventListener('click', closeMenu);
         menuActionsBtn.addEventListener('click', toggleMenu);
         actionsContainer.addEventListener('click', function (event) {
             if (event.target.nodeName === 'SPAN' || event.target.nodeName === 'A' || event.target.nodeName === 'LI') {

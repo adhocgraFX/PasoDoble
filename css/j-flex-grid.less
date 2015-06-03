@@ -2,7 +2,7 @@
 // The spec: http://www.w3.org/TR/css3-flexbox
 
 // Flexbox display
-// flex or inline-flex
+// values: flex | inline-flex
 .flex-display(@display: flex) {
     display: ~"-webkit-@{display}";
     display: ~"-moz-@{display}";
@@ -11,7 +11,7 @@
     display: @display;
 }
 
-// alternativ
+// alternative
 .flex-inline-display(@display: inline-flex) {
     display: ~"-webkit-@{display}";
     display: ~"-moz-@{display}";
@@ -19,6 +19,7 @@
     display: ~"-ms-@{display}"; // IE11
     display: @display;
 }
+// end alternative
 
 // Flex Flow Direction
 // > applies to: flex containers
@@ -68,7 +69,7 @@
 
 // Flex grow factor
 // > applies to: flex items
-// grow value: <number>
+// grow value: <number> | 0 = no growth
 .flex-grow(@grow: 0) {
     -webkit-flex-grow: @grow;
     -moz-flex-grow: @grow;
@@ -78,7 +79,7 @@
 
 // Flex shrink factor
 // > applies to: flex itemsink factor
-// value: <number>
+// value: <number> | 0 = no shrink
 .flex-shrink(@shrink: 1) {
     -webkit-flex-shrink: @shrink;
     -moz-flex-shrink: @shrink;

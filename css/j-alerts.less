@@ -127,10 +127,12 @@
     background: @colorBlueGrey600;
 }
 
-// goldener schnitt
-.width-g-minor, .width-g-major {
+// goldener schnitt // drittel-teilung
+.width-g-minor,
+.width-g-major,
+.width-33,
+.width-66 {
     width: 100%;
-
 }
 
 @media screen and (min-width: 48em) {
@@ -140,6 +142,12 @@
     }
     .width-g-major {
         width: 61.8%;
+    }
+    .width-33 {
+        width: 33.33%;
+    }
+    .width-66 {
+        width: 66.66%;
     }
 }
 

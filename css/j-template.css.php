@@ -4,6 +4,7 @@ header('Content-type: text/css');
 // get template params
 $mainwidth = $this->params->get('mainwidth');
 $asidewidth = $this->params->get('asidewidth');
+$leftwidth = $this->params->get('leftwidth');
 
 $basefontsize = $this->params->get('basefontsize');
 $textindent = $this->params->get('textindent');
@@ -68,6 +69,18 @@ $textresizer = $this->params->get('textresizer');
         }
     <?php endif; ?>
 
+    <?php if ($this->countModules('left_bar')): ?>
+        button.leftbar-menu {
+            width: 3em;
+        }
+    <?php else : ?>
+        button.leftbar-menu {
+            display: none !important;
+            visibility: hidden;
+        }
+    <?php endif; ?>
+
+
     @media screen and (min-width: 48em){
 
         <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
@@ -92,6 +105,13 @@ $textresizer = $this->params->get('textresizer');
             -moz-flex: <?php echo $asidewidth;?>;
             -ms-flex: <?php echo $asidewidth;?>;
             flex: <?php echo $asidewidth;?>;
+        }
+
+        aside.leftbar-container {
+            -webkit-flex: <?php echo $leftwidth;?>;
+            -moz-flex: <?php echo $leftwidth;?>;
+            -ms-flex: <?php echo $leftwidth;?>;
+            flex: <?php echo $leftwidth;?>;
         }
     }
 

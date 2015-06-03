@@ -46,6 +46,16 @@ body {
         transform: translate(-250px, 0);
     }
 
+    &.left-open {
+        -webkit-transform: translate(250px, -3em);
+        transform: translate(250px, -3em);
+    }
+
+    &.left-open ~ .layout {
+        -webkit-transform: translate(250px, 0);
+        transform: translate(250px, 0);
+    }
+
     &.actions-open {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
@@ -104,7 +114,8 @@ body {
 
 .app-bar.open button.menu:before,
 .app-bar.aside-open button.sidebar-menu:before,
-.app-bar.actions-open button.actions:before{
+.app-bar.left-open button.leftbar-menu:before,
+.app-bar.actions-open button.actions:before {
     content: "\e606";
 }
 
@@ -130,6 +141,13 @@ body {
                 content: "\e604";
             }
         }
+
+        &.leftbar-menu {
+            &:before {
+                content: "\e605";
+            }
+        }
+
         &.actions {
             &:before {
                 content: "\e60a";
@@ -232,6 +250,27 @@ body {
     }
 }
 
+.leftbar-container {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    -webkit-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+
+    h4.sidebar-text {
+        font-size: 1em;
+        background-color: @color-primary;
+        color: @color-primary-text;
+        height: 3em;
+        padding: 1em;
+        margin: 0;
+        line-height: 1;
+    }
+}
+
 .navdrawer-container.open  {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -240,6 +279,7 @@ body {
 .app-bar,
 .navdrawer-container.opened,
 .sidebar-container.aside-opened,
+.leftbar-container.left-opened,
 .app-bar-actions.actions-opened,
  .layout {
     -webkit-transition: -webkit-transform 0.3s ease-out;
@@ -292,6 +332,7 @@ body {
 
     button.menu,
     button.sidebar-menu,
+    button.leftbar-menu,
     button.actions {
         .hidden;
     }
@@ -311,7 +352,8 @@ body {
         }
     }
 
-    .sidebar-container {
+    .sidebar-container,
+    .leftbar-container {
         position: relative;
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
@@ -347,7 +389,8 @@ body {
         overflow-y: auto;
     }
 
-    .sidebar-container {
+    .sidebar-container,
+    .leftbar-container {
         overflow-y: auto;
     }
 }
