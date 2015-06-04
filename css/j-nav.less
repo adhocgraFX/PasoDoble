@@ -75,7 +75,7 @@ nav {
 
         li {
             text-align: left;
-            background: desaturate(@color-brand, 10%);
+            background: darken(@color-brand, 10%);
 
             a {
                 padding: 1em;
@@ -84,19 +84,19 @@ nav {
                     content: "" !important;
                     margin: 0;
                 }
-            }
 
-            a:before {
-                display: inline-block;
-                font-family: FontAwesome;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 1em;
-                line-height: 1;
-                margin: 0 .5em;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                content: "\e601";
+                &:before {
+                    display: inline-block;
+                    font-family: FontAwesome;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 1em;
+                    line-height: 1;
+                    margin: 0 .5em;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    content: "\e601";
+                }
             }
         }
     }
@@ -143,15 +143,6 @@ nav {
 			}
 		}
 
-		ul.nav-child {
-			display: none;
-		}
-
-        ul.nav li:hover ul.nav-child {
-            display: block;
-        }
-
-
         ul.nav-child {
             position: absolute;
             margin: -.5em 0 0 .5em;
@@ -170,6 +161,7 @@ nav {
                 a {
 					padding: 1em;
 					height: 3em;
+                    color: @color-primary-text;
 
                     &:before {
                         content: "";
