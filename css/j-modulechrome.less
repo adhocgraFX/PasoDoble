@@ -111,7 +111,9 @@
 
 // transparenter module chrome
 .module {
-    &.dark-body { // dark-body für dunkle hintergründe
+
+    // dark-body für dunkle hintergründe
+    &.dark-body {
         background: transparent;
         border: 0;
         .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
@@ -129,7 +131,8 @@
         }
     }
 
-    &.transparent { // transparent für helle hintergründe
+    // transparent für helle hintergründe
+    &.transparent {
         background: transparent;
         color: inherit !important;
         border: 0;
@@ -307,15 +310,23 @@
 
 .module {
     &.flickity {
-        background: transparent;
+        background: @smoke;
         color: inherit !important;
         border: 0;
-        margin: .5em .5em 2em .5em;
-        .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
+
+        .module-body {
+            padding: 0;
+        }
     }
 
-    .module-body {
-        padding: 1em 1em 2em 1em;
+    &.flickity-dots {
+        background: @smoke;
+        color: inherit !important;
+        border: 0;
+
+        .module-body {
+            padding: 0 0 2em 0;
+        }
     }
 }
 

@@ -24,6 +24,11 @@ h1, h2, h3, h4, h5, h6 {
     color: @color-heading;
 	margin-top: @paragraph-val;
 	margin-bottom: @paragraph-val / 2;
+
+    // nach Trent Walton siehe mixins
+    .css-hyphens (auto);
+    .normal-wrap;
+
 	// text rendering
 	text-rendering: optimizeLegibility;
     .font-feature-settings;
@@ -120,7 +125,7 @@ p {
 	}
 
 	&.autor {
-		font-size: 112.5%;
+		font-size: 1em;
 		text-indent: 0;
 		text-align: right;
 		font-style: italic;
@@ -150,16 +155,14 @@ span {
 
 article {
 	p, ul {
-		// nach Trent Walton
+		// nach Trent Walton siehe mixins
 		.css-hyphens (auto);
-		// normal: Indicates that lines may only break at normal word break points.
-		// break-word : Indicates that normally unbreakable words may be broken at ...
-		// arbitrary points if there are no otherwise acceptable break points in the line.
-		.breakword;
+		.normal-wrap;
 
 		// text rendering
 		text-rendering: optimizeLegibility;
-		.font-feature-settings; // kern siehe mixins
+        // kerning siehe mixins
+        .font-feature-settings;
 	}
 }
 
@@ -193,6 +196,10 @@ a {
 // text formats
 em {
 	font-style: italic;
+}
+
+address {
+    font-style: italic;
 }
 
 strong {
@@ -391,7 +398,7 @@ blockquote {
 	// border-right: .5em solid @gainsboro;
 	// border-top: 1px solid @gainsboro;
 	// border-bottom: 1px solid @gainsboro;
-	background: @white;
+	// background: @white;
 
 	cite {
 		display: block;
