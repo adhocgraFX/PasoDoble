@@ -28,8 +28,6 @@ $textresizer = $this->params->get('textresizer');
 // generator tag
 $this->setGenerator(null);
 
-// get template params
-
 // Add Joomla! JavaScript Framework
 JHtml::_('bootstrap.framework');
 // JHtml::_('jquery.framework');

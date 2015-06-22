@@ -3,62 +3,77 @@
 * MIT License
 */
 
-/* Border-box-sizing */
-.block-group, .block, .block-group:after, .block:after, .block-group:before, .block:before {
-	.box-sizing(border-box);
-}
-
-/* Clearfix */
 .block-group {
-  *zoom: 1;
-}
-.block-group:before, .block-group:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.block-group:after {
-  clear: both;
+    // Border-box-sizing
+    .box-sizing(border-box);
+
+    // Clearfix
+    *zoom: 1;
+
+    // ul/li compatibility
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    &:before,
+    &:after {
+        .box-sizing(border-box);
+
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+
+    &:after {
+        // Clearfix
+        clear: both;
+    }
 }
 
-.block-group {
-  /* ul/li compatibility */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Nested grid */
-.block-group > .block-group {
-  clear: none;
-  float: left;
-  margin: 0 !important;
-}
-
-/* Default block */
 .block {
-  float: left;
-  width: 100%;
+    .box-sizing(border-box);
+
+    // Default block
+    float: left;
+    width: 100%;
+
+    &:after,
+    &:before {
+        .box-sizing(border-box);
+    }
 }
 
+// Nested grid
+.block-group > .block-group {
+    clear: none;
+    float: left;
+    margin: 0 !important;
+}
 
-// personal section
+//
+// adhocgrafx section
 // gutter variables
 
 @verticalGutter: 0;
 @horizontalGutter: 0;
 
 .block-group {
-	margin: -@verticalGutter -@horizontalGutter;
+    margin: -@verticalGutter -@horizontalGutter;
 }
 
 .block {
-	padding: @verticalGutter @horizontalGutter;
+    padding: @verticalGutter @horizontalGutter;
 }
 
-// mixin to assign  block styles to tag elements
+// mixin to assign block style to any tag element
 .make-block {
-	float: left;
-	width: 100%;
-	padding: @verticalGutter @horizontalGutter;
+    .box-sizing(border-box);
+    float: left;
+    width: 100%;
+    padding: @verticalGutter @horizontalGutter;
+
+    &:after,
+    &:before {
+        .box-sizing(border-box);
+    }
 }

@@ -23,6 +23,7 @@ $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_da
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author'));
 
 ?>
+
 <article class="item-page<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="http://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
@@ -117,10 +118,8 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
             <?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
         <?php  endif; ?>
 
-	<?php
-if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
-	echo $this->item->pagination;
-?>
+	<?php if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
+	    echo $this->item->pagination; ?>
 	<?php endif; ?>
 	<?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '1')) || ($params->get('urls_position') == '1'))) : ?>
 	<?php echo $this->loadTemplate('links'); ?>

@@ -153,6 +153,24 @@
                        description="Google analytics code; anonym, asynchon"
                        size="10" >
                 </field>
+                <field name="Design Copyright Informations"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="designername"
+                       type="text"
+                       default="my_name"
+                       label="Name"
+                       description="Designers Name"
+                       size="10" >
+                </field>
+                <field name="designersite"
+                       type="text"
+                       default="http://my_site.de"
+                       label="Site"
+                       description="Designers Website: http://my_site.de"
+                       size="30" >
+                </field>
             </fieldset>
         </fields>
     </config>
