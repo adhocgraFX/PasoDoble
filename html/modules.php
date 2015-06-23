@@ -37,10 +37,10 @@ function modChrome_jduo($module, &$params, &$attribs)
     <?php endif;
 }
 
-function modChrome_flickity($module)
+function modChrome_flickity($module, &$params, &$attribs)
 {
     if (!empty ($module->content)) : ?>
-        <div class="module flickity">
+        <div class="module <?php if ($params->get('moduleclass_sfx')!='') : ?><?php echo $params->get('moduleclass_sfx'); ?><?php endif; ?>">
             <?php echo $module->content; ?>
         </div>
     <?php endif;
