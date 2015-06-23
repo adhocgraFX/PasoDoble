@@ -308,25 +308,41 @@
     }
 }
 
+// flickity as custom module in slideshow module position
 .module {
-    &.flickity {
-        background: @smoke;
+    &.slider {
+        background: transparent;
         color: inherit !important;
         border: 0;
+        .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
+    }
+
+    &.slider-dots {
+        background: transparent;
+        color: inherit !important;
+        border: 0;
+        .box-shadows(0 0 0 0 transparent, 0 0 0 0 transparent);
+        margin-bottom: 2em;
+    }
+}
+
+// flickity as custom module in any other module position e.g. sidebar
+.module {
+    &.flickity {
+         background: @smoke;
+         color: inherit !important;
 
         .module-body {
             padding: 0;
         }
-    }
+     }
 
     &.flickity-dots {
         background: @smoke;
         color: inherit !important;
-        border: 0;
 
         .module-body {
             padding: 0 0 2em 0;
         }
     }
 }
-

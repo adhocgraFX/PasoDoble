@@ -6,7 +6,7 @@
 // LESS Version by adhocgrafx
 
 .block-group {
-    // border-box mixin > siehe j-mixins.less
+    // border-box mixin > j-mixins.less > siehe unten
     .box-sizing(border-box);
 
     // Clearfix
@@ -78,3 +78,11 @@
         .box-sizing(border-box);
     }
 }
+
+// Box sizing > j-mixins.less
+// uncomment if you use j-pocketgrid.less without j-mixins.less
+// .box-sizing(@boxmodel) {
+//     -webkit-box-sizing: @boxmodel;
+//     -moz-box-sizing: @boxmodel;
+//     box-sizing: @boxmodel;
+// }
