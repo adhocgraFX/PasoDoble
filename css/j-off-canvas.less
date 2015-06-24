@@ -14,6 +14,10 @@ body {
 }
 
 .app-bar {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     display: block;
     width: 100%;
     position: fixed;
@@ -120,6 +124,10 @@ body {
 }
 
 .app-bar-container {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     .flex-display;
     .flex-flow(row nowrap);
     .justify-content(space-between);
@@ -164,21 +172,33 @@ body {
         height: 100%;
         width: 100%;
 
+        .flex-display;
+        .flex-flow(row nowrap);
+        .justify-content(center);
+        .align-items(center);
+
         h1.logo-text {
             color: @color-primary-text;
-            font-size: 1.5em;
-            line-height: 2.25;
+            font-size: 1.5em; // fallback
+            font-size: 4vw;
+            line-height: 1;
             font-weight: 300;
             margin: 0 auto;
             padding: 0;
             float: none;
             max-width: none;
             display: initial;
+
+            .align-self(center);
         }
     }
 }
 
 .app-bar-actions {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     .flex-display;
     .flex-flow(row nowrap);
     .justify-content(space-between);
@@ -197,17 +217,19 @@ body {
 .promote-layer {
     /*
     This may promote the layer to a composited
-    layer.
+    layer. Replace with will-change when available
 
-    Replace with will-change when available
-
-    #perfmatters
-    */
+    // #perfmatters
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    */
 }
 
 .navdrawer-container {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     height: 100%;
     background-color: @color-primary;
     z-index: 2;
@@ -230,6 +252,10 @@ body {
 }
 
 .sidebar-container {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     z-index: 1;
     position: fixed;
     top: 0;
@@ -251,6 +277,10 @@ body {
 }
 
 .leftbar-container {
+    // #perfmatters
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
     z-index: 1;
     position: fixed;
     top: 0;
@@ -318,7 +348,8 @@ body {
     .app-bar a h1.logo-text {
         margin: 0;
         padding: 0;
-        font-size: 4em;
+        font-size: 4em; // fallback
+        font-size: 5vw;
         line-height: 1.65;
     }
 
@@ -384,7 +415,7 @@ body {
     }
 }
 
-// small screen exeption for nav 47
+// small screen exeption for nav
 @media all and (max-width: 47em) {
     .navdrawer-container {
         overflow-y: auto;
@@ -395,3 +426,11 @@ body {
         overflow-y: auto;
     }
 }
+
+// small screen exeption for nav
+@media all and (max-width: 30em) {
+    .app-bar a h1.logo-text {
+        font-size: 1.25em;
+    }
+}
+
