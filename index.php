@@ -14,6 +14,9 @@ $params = $app->getParams();
 $pageclass = $params->get('pageclass_sfx');
 $tpath = $this->baseurl . '/templates/' . $this->template;
 
+$tpl = $app->getTemplate(true);
+$params = $tpl->params;
+
 // Detecting Active Variables
 $option = $app->input->getCmd('option', '');
 $view = $app->input->getCmd('view', '');

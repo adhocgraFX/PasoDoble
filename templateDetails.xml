@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-
-<extension version="1" type="template" client="site" method="upgrade">
-	
+<extension version="3.3" type="template" client="site" method="upgrade">
 	<name>PasoDoble</name>
 	<creationDate>2015-01-01</creationDate>
 	<author>Johannes Hock</author>
@@ -33,7 +30,7 @@
 	
 	<files>
 		<folder>css</folder>
-		<folder>fonts</folder>
+        <folder>fonts</folder>
         <folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
@@ -98,7 +95,8 @@
                        type="radio"
                        default="0"
                        label="Text indent Paragraph"
-                       description="Text indent Paragraph">
+                       description="Text indent Paragraph"
+                       class="btn-group btn-group-yesno" >
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
@@ -106,7 +104,8 @@
                        type="radio"
                        default="0"
                        label="Textresizer"
-                       description="Textresizer">
+                       description="Textresizer"
+                       class="btn-group btn-group-yesno" >
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>

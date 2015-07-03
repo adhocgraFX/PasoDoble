@@ -10,18 +10,19 @@ PasoDoble
     *  [WEB STARTER KIT](https://github.com/google/web-starter-kit "WEB STARTER KIT")
 * lightweight off-canvas system for 
     * nav 
-    * aside and 
+    * aside (left / right) and 
     * app-bar
 * flexbox layout
 * responsive touchable slides: [flickity](http://flickity.metafizzy.co/ "flickity")
 * modal media boxes: [formstone lightbox](http://formstone.it/components/lightbox/ "formstone lightbox")
+* responsive images: [mobify](http://www.mobify.com/mobifyjs/ "mobify.js")
 * analytics / options
 * font resizer
-
-###Work in progress!
 
 ###PasoDoble in action
 [pasodoble](http://pasodoble.adhocgrafx.de "PasoDoble")
 
-### todos:
+###Work in progress!
+
+#### todos:
 * ...
