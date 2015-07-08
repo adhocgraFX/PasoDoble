@@ -322,7 +322,9 @@ $textindent = $this->params->get('textindent');
                 // Default. Index 1
                 { "font-size" : "100%" },
                 // Large. Index 2
-                { "font-size" : "112.5%" }
+                { "font-size" : "112.5%" },
+                // XLarge. Index 3
+                { "font-size" : "125%" }
             ],
             selectedIndex: 1
         });

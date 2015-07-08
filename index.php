@@ -39,8 +39,8 @@ JHtml::_('bootstrap.framework');
 $user = JFactory::getUser();
 
 if ($view == "form" or $layout == "edit"):
-    // $doc->addStyleSheet($tpath.'/css/jui-bootstrap/jui-template.css');
     // template css oder jui-template css
+    // $doc->addStyleSheet($tpath.'/css/jui-bootstrap/jui-template.css');
     $doc->addStyleSheet($tpath . '/css/j-template.css');
 else:
     // template css
@@ -150,12 +150,14 @@ endif; ?>
         <?php if ($textresizer == 1): ?>
             <div class="textresizer-container">
                 <ul class="textresizer" id="textsizer-embed">
-                    <li><a href="#nogo" class="small-text" title="small"><span class="icon-chevron-down"></span>
+                    <li><a href="#nogo" class="small-text" title="small"><span class="icon-angle-down"></span>
                             <p hidden>small</p></a></li>
                     <li><a href="#nogo" class="default-text" title="default"><span class="icon-format-size"></span>
                             <p hidden>default</p></a></li>
-                    <li><a href="#nogo" class="large-text" title="large"><span class="icon-chevron-up"></span>
+                    <li><a href="#nogo" class="large-text" title="large"><span class="icon-angle-up"></span>
                             <p hidden>large</p></a></li>
+                    <li><a href="#nogo" class="x-large-text" title="x-large"><span class="icon-angle-double-up"></span>
+                            <p hidden>x-large</p></a></li>
                 </ul>
             </div>
         <?php endif; ?>
