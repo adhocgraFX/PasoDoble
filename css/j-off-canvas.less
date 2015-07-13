@@ -7,6 +7,17 @@
 
 html,
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: @color-primary;
+    box-sizing: border-box;
+    min-height: 100%;
 
     &.open {
         overflow: hidden;
@@ -163,35 +174,30 @@ body {
         }
     }
 
-    a {
-        text-decoration: none;
-        font-weight: normal;
-        text-align: center;
-        color: inherit;
-        display: block;
-        height: 100%;
-        width: 100%;
+    h1.logo-text {
+        .flex(1);
+        .align-self(center);
 
-        .flex-display;
-        .flex-flow(row nowrap);
-        .justify-content(center);
-        .align-items(center);
+        color: @color-primary-text;
+        font-size: 1.5em; // fallback
+        font-size: 4vw;
+        line-height: 1;
+        font-weight: 300;
+        margin: 0 .5em;
+        padding: 0;
+        float: none;
+        max-width: none;
+        display: initial;
 
-        h1.logo-text {
-            .align-self(center);
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
 
-            color: @color-primary-text;
-            font-size: 1.5em; // fallback
-            font-size: 4vw;
-            line-height: 1;
-            font-weight: 300;
-            margin: 0 auto;
-            padding: 0;
-            float: none;
-            max-width: none;
-            display: initial;
         }
     }
+
+
 }
 
 .app-bar-actions {
@@ -343,14 +349,12 @@ body {
         padding: 0 .5em;
         box-sizing: border-box;
         .justify-content(center);
-    }
 
-    .app-bar a h1.logo-text {
-        margin: 0;
-        padding: 0;
-        font-size: 4em; // fallback
-        font-size: 5vw;
-        line-height: 1.65;
+        h1.logo-text {
+            text-align: center;
+            font-size: 4em; // fallback
+            font-size: 5vw;
+        }
     }
 
     .app-bar::after {
@@ -397,7 +401,7 @@ body {
     }
 
     .app-bar-actions {
-        .justify-content(flex-end);
+        // .justify-content(flex-end);
         position: relative;
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
@@ -420,19 +424,22 @@ body {
 }
 
 @media screen and (min-width: 100em) {
-    .app-bar a h1.logo-text {
+
+    .app-bar-container h1.logo-text {
         font-size: 4em;
     }
 }
 
 @media all and (max-width: 30em) {
-    .app-bar a h1.logo-text {
+
+    .app-bar-container h1.logo-text {
         font-size: 1.25em;
     }
 }
 
 // small screen exeption for nav
 @media all and (max-width: 47em) {
+
     .navdrawer-container {
         overflow-y: auto;
     }

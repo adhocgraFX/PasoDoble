@@ -6,7 +6,13 @@ $mainwidth = $this->params->get('mainwidth');
 $asidewidth = $this->params->get('asidewidth');
 $leftwidth = $this->params->get('leftwidth');
 
+$headerbackground = $this->params->get('headerbackground');
+
+$bodyfont = $this->params->get('bodyfont');
+$headlinefont = $this->params->get('headlinefont');
+
 $basefontsize = $this->params->get('basefontsize');
+
 $textindent = $this->params->get('textindent');
 $textresizer = $this->params->get('textresizer');
 
@@ -17,6 +23,14 @@ $textresizer = $this->params->get('textresizer');
     html {
         font-size: <?php echo $basefontsize;?>%;
     }
+
+    <?php if ($bodyfont): ?>
+        body { font-family: '<?php echo htmlspecialchars($bodyfont);?>', Helvetica, Arial, 'Droid Sans', sans-serif; }
+    <?php endif; ?>
+
+    <?php if ($headlinefont): ?>
+        h1, h2, h3, h4, h5, h6 { font-family: '<?php echo htmlspecialchars($headlinefont);?>', Helvetica, Arial, 'Droid Sans', sans-serif; }
+    <?php endif; ?>
 
     <?php if ($textindent == 1): ?>
         article p + p {
@@ -80,10 +94,20 @@ $textresizer = $this->params->get('textresizer');
         }
     <?php endif; ?>
 
+    @media screen and (min-width: 48em) {
 
-    @media screen and (min-width: 48em){
+        <?php if ($headerbackground): ?>
+            .header-img .app-bar {
+                background: url(<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($headerbackground);?>);
+                background-size: cover;
+                height: 72vh;
+            }
+            .header-img .app-bar-container {
+                height: 62vh;
+            }
+        <?php endif;?>
 
-        <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+    <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
             .app-bar-actions {
                 height: 3em;
             }

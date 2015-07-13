@@ -27,6 +27,8 @@ $sitename = $app->get('sitename');
 // get template params
 $logo = $this->params->get('logo');
 $textresizer = $this->params->get('textresizer');
+$fontloadercss = $this->params->get('fontloadercss');
+$fontloaderjs = $this->params->get('fontloaderjs');
 
 // generator tag
 $this->setGenerator(null);
@@ -37,9 +39,21 @@ JHtml::_('bootstrap.framework');
 
 // Add current user information
 $user = JFactory::getUser();
+?>
 
-if ($view == "form" or $layout == "edit"):
-    // template css oder jui-template css
+<!-- font loader css code: google or brick fonts -->
+<?php if ($fontloadercss) : ?>
+    <?php $doc->addStyleSheet($fontloadercss); ?>
+<?php endif; ?>
+
+<!-- font loader js code: adobe typekit fonts -->
+<?php if ($fontloaderjs) : ?>
+    <script src="//use.typekit.net/<?php echo ($fontloaderjs); ?>.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php endif; ?>
+
+<!-- template css oder jui-template css -->
+<?php if ($view == "form" or $layout == "edit"):
     // $doc->addStyleSheet($tpath.'/css/jui-bootstrap/jui-template.css');
     $doc->addStyleSheet($tpath . '/css/j-template.css');
 else:
@@ -57,9 +71,6 @@ endif; ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- brick fonts -->
-    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Fira+Sans:300,300i,400,400i,500,500i">
 
     <!-- Bildverkleinerung über mobify cdn -->
     <script>!function (a, b, c, d, e) {
@@ -170,9 +181,9 @@ endif; ?>
     <section class="app-bar-container">
         <button class="leftbar-menu" aria-label="Sidebar"></button>
         <button class="menu" aria-label="Navigation"></button>
-        <a href="<?php echo $this->baseurl ?>">
-            <h1 class="logo-text"><?php echo htmlspecialchars($sitename); ?></h1>
-        </a>
+            <h1 class="logo-text">
+                <a href="<?php echo $this->baseurl ?>"><?php echo htmlspecialchars($sitename); ?></a>
+            </h1>
         <button class="actions" aria-label="actions"></button>
         <button class="sidebar-menu" aria-label="Sidebar"></button>
     </section>
