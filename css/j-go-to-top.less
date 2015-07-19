@@ -1,14 +1,4 @@
-.go-top {
-	display: none;
-	position: fixed;
-	bottom: .5em;
-	right: .5em;
-
-	height: 2em;
-	max-height: 2em;
-	width: 2em;
-	padding: .25em;
-    .border-radius(1em);
+.go-top, .go-down {
 
 	font-size: 1.5em;
 	text-decoration: none;
@@ -38,3 +28,45 @@
         font-size: 1.5em;
     }
 }
+
+.go-top, {
+    display: none;
+    position: fixed;
+    bottom: .5em;
+    right: .5em;
+
+    height: 2em;
+    max-height: 2em;
+    width: 2em;
+    padding: .25em;
+    .border-radius(1em);
+}
+
+.go-down {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@media all and (min-width: 47em) {
+
+    .go-down {
+        display: block;
+        position: absolute;
+        bottom: .5em;
+        right: .5em;
+
+        height: 2em;
+        max-height: 2em;
+        width: 2em;
+        padding: .25em;
+        .border-radius(1em);
+
+        margin: 0;
+    }
+}
+

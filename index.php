@@ -2,7 +2,7 @@
 
 /**
  * @copyright    Paso Doble responsive Joomla! 3 template © 2015 adhocgraFX / Johannes Hock - All Rights Reserved.
- * @license        GNU/GPL
+ * @license      GNU/GPL
  **/
 
 // variables
@@ -13,6 +13,7 @@ $active = $app->getMenu()->getActive();
 $params = $app->getParams();
 $pageclass = $params->get('pageclass_sfx');
 $tpath = $this->baseurl . '/templates/' . $this->template;
+$action = $menu->getActive() == $menu->getDefault() ? ('front') : ('site');
 
 $tpl = $app->getTemplate(true);
 $params = $tpl->params;
@@ -27,8 +28,12 @@ $sitename = $app->get('sitename');
 // get template params
 $logo = $this->params->get('logo');
 $textresizer = $this->params->get('textresizer');
+$whichmethod = $this->params->get('whichmethod');
 $fontloadercss = $this->params->get('fontloadercss');
 $fontloaderjs = $this->params->get('fontloaderjs');
+$headerbackground = $this->params->get('headerbackground');
+$buttontext = $this->params->get('buttontext');
+$buttonlink = $this->params->get('buttonlink');
 
 // generator tag
 $this->setGenerator(null);
@@ -42,14 +47,18 @@ $user = JFactory::getUser();
 ?>
 
 <!-- font loader css code: google or brick fonts -->
-<?php if ($fontloadercss) : ?>
-    <?php $doc->addStyleSheet($fontloadercss); ?>
+<?php if ($whichmethod==1) : ?>
+    <?php if ($fontloadercss) : ?>
+        <?php $doc->addStyleSheet($fontloadercss); ?>
+    <?php endif; ?>
 <?php endif; ?>
 
 <!-- font loader js code: adobe typekit fonts -->
-<?php if ($fontloaderjs) : ?>
-    <script src="//use.typekit.net/<?php echo ($fontloaderjs); ?>.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php if ($whichmethod==0) : ?>
+    <?php if ($fontloaderjs) : ?>
+        <script src="//use.typekit.net/<?php echo ($fontloaderjs); ?>.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <?php endif; ?>
 <?php endif; ?>
 
 <!-- template css oder jui-template css -->
@@ -153,8 +162,7 @@ endif; ?>
 </head>
 
 <body
-    class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task');
-    ?> <?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('site')) . ' ' . $active->alias . ' ' . $pageclass; ?>">
+    class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task'); ?> <?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('site')) . ' ' . $active->alias . ' ' . $pageclass; ?>">
 
 <header class="app-bar promote-layer" role="banner">
     <section class="app-bar-actions">
@@ -187,9 +195,17 @@ endif; ?>
         <button class="actions" aria-label="actions"></button>
         <button class="sidebar-menu" aria-label="Sidebar"></button>
     </section>
+    <?php if (($buttontext) and ($buttonlink) and ($action=="front")): ?>
+        <section class="app-bar-call-to-action hide-on-tablet">
+            <a href="<?php echo $this->baseurl ?>/<?php echo ($buttonlink); ?>" class="call-to-action btn btn-primary"><?php echo htmlspecialchars($buttontext); ?> <span class="icon-arrow-forward"></span></a>
+        </section>
+    <?php endif; ?>
+    <?php if (($headerbackground) and ($pageclass=="header-img")): ?>
+        <a href="#navdrawer" class="go-down"><span class="icon-chevron-down"></span><p hidden>Navigation</p></a>
+    <?php endif; ?>
 </header>
 
-<nav class="navdrawer-container promote-layer" role="navigation">
+<nav class="navdrawer-container promote-layer" id="navdrawer" role="navigation">
     <?php if ($logo): ?>
         <div class="logo-image">
             <a href="<?php echo $this->baseurl ?>">

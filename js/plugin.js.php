@@ -3,6 +3,9 @@
 $analytics = $this->params->get('analytics');
 $textresizer = $this->params->get('textresizer');
 $textindent = $this->params->get('textindent');
+$headerbackground = $this->params->get('headerbackground');
+$params = $app->getParams();
+$pageclass = $params->get('pageclass_sfx');
 ?>
 
 <script type="text/javascript">
@@ -254,6 +257,29 @@ $textindent = $this->params->get('textindent');
             return false;
         })
     });
+
+    // go to nav
+    <?php if (($headerbackground) and ($pageclass=="header-img")): ?>
+    jQuery(window).load(function() {
+        var offset = 120;
+        var duration = 500;
+        var $navdrawer = jQuery("#navdrawer");
+
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.go-down').fadeOut(duration);
+            } else {
+                jQuery('.go-down').fadeIn(duration);
+            }
+        });
+
+        jQuery('.go-down').click(function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: ($navdrawer).offset().top}, duration);
+            return false;
+        })
+    });
+    <?php endif; ?>
 
     // typographic quotes
     (typeof('jQuery') == 'function' ? jQuery : function ( callback ) {

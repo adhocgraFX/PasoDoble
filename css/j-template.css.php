@@ -5,17 +5,13 @@ header('Content-type: text/css');
 $mainwidth = $this->params->get('mainwidth');
 $asidewidth = $this->params->get('asidewidth');
 $leftwidth = $this->params->get('leftwidth');
-
 $headerbackground = $this->params->get('headerbackground');
-
 $bodyfont = $this->params->get('bodyfont');
 $headlinefont = $this->params->get('headlinefont');
-
 $basefontsize = $this->params->get('basefontsize');
-
 $textindent = $this->params->get('textindent');
 $textresizer = $this->params->get('textresizer');
-
+$buttontext = $this->params->get('buttontext');
 ?>
 
 <style type="text/css">
@@ -94,20 +90,29 @@ $textresizer = $this->params->get('textresizer');
         }
     <?php endif; ?>
 
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: 47em) {
 
         <?php if ($headerbackground): ?>
             .header-img .app-bar {
                 background: url(<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($headerbackground);?>);
                 background-size: cover;
-                height: 72vh;
+                height: 100vh;
             }
-            .header-img .app-bar-container {
-                height: 62vh;
-            }
-        <?php endif;?>
+            <?php if ($buttontext): ?>
+                .header-img .app-bar-container {
+                    height: 60vh;
+                }
+                .header-img .app-bar-call-to-action {
+                    height: 30vh;
+                }
+            <?php else : ?>
+                .header-img .app-bar-container {
+                    height: 90vh;
+                }
+            <?php endif; ?>
+        <?php endif; ?>
 
-    <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
+        <?php if (($textresizer == 1) or ($this->countModules('search'))): ?>
             .app-bar-actions {
                 height: 3em;
             }

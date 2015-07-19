@@ -80,8 +80,8 @@
                 </field>
                 <field name="headerbackground"
                        type="media"
-                       label="Header Image / header-img"
-                       description="Select header image / add header-img as pageclass suffix" >
+                       label="Header Image"
+                       description="Select header image / Important: add header-img as page class suffix" >
                 </field>
 
                 <field name="Typography"
@@ -90,13 +90,13 @@
                 </field>
                 <field name="bodyfont"
                        type="text"
-                       default=""
+                       default="Fira Sans"
                        label="Body Font"
                        description="Body Font Name / p" >
                 </field>
                 <field name="headlinefont"
                        type="text"
-                       default=""
+                       default="Fira Sans"
                        label="Headline Font"
                        description="Headline Font Name / h1, h2, h3..." >
                 </field>
@@ -105,7 +105,7 @@
                        type="spacer"
                        hr="false" >
                 </field>
-                <field name="whatMethod"
+                <field name="whichmethod"
                        label="css or js"
                        description="Brick, Google css or Adobe Typekit js"
                        type="radio"
@@ -116,17 +116,16 @@
                 </field>
                 <field name="fontloadercss"
                        type="textarea"
-                       showon="whatMethod:1"
-                       default=""
+                       showon="whichmethod:1"
+                       default="//brick.a.ssl.fastly.net/Fira+Sans:300,300i,400,400i,500,500i"
                        label="Brick / Google css href path"
                        description="Paste only the href web font link (inside the quotation) here, not the complete code."
                        filter="raw"
-                       rows="10"
-                       cols="20"  >
+                       size="100"  >
                 </field>
                 <field name="fontloaderjs"
                        type="text"
-                       showon="whatMethod:0"
+                       showon="whichmethod:0"
                        default=""
                        label="Typekit ID / token"
                        description="Paste only the Adobe Typekit ID / or token here."
@@ -163,6 +162,20 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="Google Analytics"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="analytics"
+                       type="text"
+                       default="UA-XXXXX-X"
+                       label="Google Analytics"
+                       description="Google analytics code; anonym, asynchon"
+                       size="10" >
+                </field>
 
                 <field name="Main Content and Aside Widths / Flex Ratio"
                        type="spacer"
@@ -192,21 +205,28 @@
                        description="Aside Width Flex Factor"
                        size="7" >
                 </field>
-            </fieldset>
 
-            <fieldset name="advanced">
-                <field name="Google Analytics"
+                <field name="Call-to-action Button"
                        type="spacer"
                        hr="false" >
                 </field>
-                <field name="analytics"
+                <field name="buttontext"
                        type="text"
-                       default="UA-XXXXX-X"
-                       label="Google Analytics"
-                       description="Google analytics code; anonym, asynchon"
-                       size="10" >
+                       default=""
+                       label="Button Text"
+                       description="Button Text"
+                       size="30" >
                 </field>
-                <field name="Design Copyright Informations"
+                <field name="buttonlink"
+                       type="textarea"
+                       default=""
+                       label="Button Link"
+                       description="Button Link"
+                       filter="raw"
+                       size="100" >
+                </field>
+
+                <field name="Design Copyright Information"
                        type="spacer"
                        hr="false" >
                 </field>
@@ -215,14 +235,15 @@
                        default="my_name"
                        label="Name"
                        description="Designers Name"
-                       size="10" >
+                       size="30" >
                 </field>
                 <field name="designersite"
-                       type="text"
+                       type="textarea"
                        default="http://my_site.de"
                        label="Site"
                        description="Designers Website: http://my_site.de"
-                       size="30" >
+                       filter="raw"
+                       size="100" >
                 </field>
             </fieldset>
         </fields>
