@@ -28,10 +28,13 @@ $sitename = $app->get('sitename');
 // get template params
 $logo = $this->params->get('logo');
 $textresizer = $this->params->get('textresizer');
+
 $whichmethod = $this->params->get('whichmethod');
 $fontloadercss = $this->params->get('fontloadercss');
 $fontloaderjs = $this->params->get('fontloaderjs');
+
 $headerbackground = $this->params->get('headerbackground');
+
 $buttontext = $this->params->get('buttontext');
 $buttonlink = $this->params->get('buttonlink');
 
