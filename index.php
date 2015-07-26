@@ -8,22 +8,21 @@
 // variables
 $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
+
+// Detecting Active Variables
 $menu = $app->getMenu();
 $active = $app->getMenu()->getActive();
 $params = $app->getParams();
-$pageclass = $params->get('pageclass_sfx');
-$tpath = $this->baseurl . '/templates/' . $this->template;
-$action = $menu->getActive() == $menu->getDefault() ? ('front') : ('site');
-
-$tpl = $app->getTemplate(true);
-$params = $tpl->params;
-
-// Detecting Active Variables
 $option = $app->input->getCmd('option', '');
 $view = $app->input->getCmd('view', '');
 $layout = $app->input->getCmd('layout', '');
 $task = $app->input->getCmd('task', '');
 $sitename = $app->get('sitename');
+$pageclass = $params->get('pageclass_sfx');
+$tpath = $this->baseurl . '/templates/' . $this->template;
+$tpl = $app->getTemplate(true);
+$params = $tpl->params;
+$action = $menu->getActive() == $menu->getDefault() ? ('front') : ('site');
 
 // get template params
 $logo = $this->params->get('logo');
@@ -64,9 +63,8 @@ $user = JFactory::getUser();
     <?php endif; ?>
 <?php endif; ?>
 
-<!-- template css oder jui-template css -->
+<!-- template css oder anderes css -->
 <?php if ($view == "form" or $layout == "edit"):
-    // $doc->addStyleSheet($tpath.'/css/jui-bootstrap/jui-template.css');
     $doc->addStyleSheet($tpath . '/css/j-template.css');
 else:
     // template css
@@ -164,8 +162,9 @@ endif; ?>
 
 </head>
 
-<body
-    class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task'); ?> <?php echo (($menu->getActive() == $menu->getDefault()) ? ('front') : ('site')) . ' ' . $active->alias . ' ' . $pageclass; ?>">
+<body class="<?php echo $option . ' view-' . $view . ($layout ? ' layout-' . $layout : ' no-layout') . ($task ? ' task-' . $task : ' no-task'); ?>
+    <?php echo ($action) . ' ' . $active->alias . ' ' . $pageclass; ?>"
+    role="document">
 
 <header class="app-bar promote-layer" role="banner">
     <section class="app-bar-actions">
@@ -200,7 +199,7 @@ endif; ?>
     </section>
     <?php if (($buttontext) and ($buttonlink) and ($action=="front")): ?>
         <section class="app-bar-call-to-action hide-on-tablet">
-            <a href="<?php echo $this->baseurl ?>/<?php echo ($buttonlink); ?>" class="call-to-action btn btn-primary"><?php echo htmlspecialchars($buttontext); ?> <span class="icon-arrow-forward"></span></a>
+            <a href="<?php echo $this->baseurl ?>/<?php echo ($buttonlink); ?>" class="call-to-action btn btn-accent"><?php echo htmlspecialchars($buttontext); ?> <span class="icon-arrow-forward"></span></a>
         </section>
     <?php endif; ?>
     <?php if (($headerbackground) and ($pageclass=="header-img")): ?>
