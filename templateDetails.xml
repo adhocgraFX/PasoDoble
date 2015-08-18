@@ -98,7 +98,13 @@
                        type="text"
                        default=""
                        label="Headline Font"
-                       description="Headline Font Name / h1, h2, h3..." >
+                       description="Headline Font Name / h1, h2, h3, h4, h5, h6" >
+                </field>
+                <field name="monofont"
+                       type="text"
+                       default=""
+                       label="Monospaced Font"
+                       description="Monospaced Font Name / textarea, pre, code, kbd, samp, var, tt" >
                 </field>
 
                 <field name="Font Services > css or js"

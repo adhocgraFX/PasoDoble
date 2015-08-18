@@ -1,8 +1,5 @@
 // typography
-
-textarea, pre, code, kbd, samp, var, tt {
-	font-family: Courier, sans-serif;
-}
+// Font-weights in use: 300, 300i, 400, 400i, 500, 500i, 700, 700i
 
 body {
 	font-size: @font-size-default;      // 100% = 16px
@@ -13,6 +10,10 @@ body {
 	font-family: @body-font, Helvetica, Arial, 'Droid Sans', sans-serif;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%; /* Automatische Schriftvergrößerung in mobilen Webkit-Browsern vermeiden */
+}
+
+textarea, pre, code, kbd, samp, var, tt {
+	font-family: @mono-font, Courier, sans-serif;
 }
 
 // Heading incl subheading classes
@@ -237,7 +238,7 @@ pre, code {
 
 kbd, samp, var, tt {
 	color: @gray;
-	font-weight: @semibold;
+	font-weight: @medium;
 }
 
 var, dfn {

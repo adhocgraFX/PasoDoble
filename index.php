@@ -59,7 +59,7 @@ $user = JFactory::getUser();
 <?php if ($whichmethod==0) : ?>
     <?php if ($fontloaderjs) : ?>
         <script src="//use.typekit.net/<?php echo ($fontloaderjs); ?>.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <?php endif; ?>
 <?php endif; ?>
 
@@ -277,7 +277,6 @@ endif; ?>
 <?php endif; ?>
 
 <a href="#" class="go-top"><span class="icon-chevron-up"></span>
-
     <p hidden>Top</p></a>
 
 <jdoc:include type="modules" name="debug"/>

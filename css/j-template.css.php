@@ -8,6 +8,7 @@ $leftwidth = $this->params->get('leftwidth');
 $headerbackground = $this->params->get('headerbackground');
 $bodyfont = $this->params->get('bodyfont');
 $headlinefont = $this->params->get('headlinefont');
+$monofont = $this->params->get('monofont');
 $basefontsize = $this->params->get('basefontsize');
 $textindent = $this->params->get('textindent');
 $textresizer = $this->params->get('textresizer');
@@ -26,6 +27,10 @@ $buttontext = $this->params->get('buttontext');
 
     <?php if ($headlinefont): ?>
         h1, h2, h3, h4, h5, h6 { font-family: '<?php echo htmlspecialchars($headlinefont);?>', Helvetica, Arial, 'Droid Sans', sans-serif; }
+    <?php endif; ?>
+
+    <?php if ($monofont): ?>
+        textarea, pre, code, kbd, samp, var, tt { font-family: '<?php echo htmlspecialchars($monofont);?>', Courier, sans-serif; }
     <?php endif; ?>
 
     <?php if ($textindent == 1): ?>
