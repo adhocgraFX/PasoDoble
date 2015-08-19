@@ -5,6 +5,12 @@ header('Content-type: text/css');
 $mainwidth = $this->params->get('mainwidth');
 $asidewidth = $this->params->get('asidewidth');
 $leftwidth = $this->params->get('leftwidth');
+$contentwidth = $this->params->get('contentwidth');
+$rowmodulewidth = $this->params->get('rowmodulewidth');
+$minrowmodulewidth = ($rowmodulewidth / 2);
+$modulewidth = $this->params->get('modulewidth');
+$minmodulewidth = ($modulewidth / 2);
+$equalheights = $this->params->get('equalheights');
 $headerbackground = $this->params->get('headerbackground');
 $bodyfont = $this->params->get('bodyfont');
 $headlinefont = $this->params->get('headlinefont');
@@ -95,6 +101,20 @@ $buttontext = $this->params->get('buttontext');
         }
     <?php endif; ?>
 
+    footer .module {
+        max-width: <?php echo $rowmodulewidth;?>em;
+        min-width: <?php echo $minrowmodulewidth;?>em;
+
+    }
+    section.top .module {
+        max-width: <?php echo $rowmodulewidth;?>em;
+        min-width: <?php echo $minrowmodulewidth;?>em;
+    }
+    section.bottom .module {
+        max-width: <?php echo $rowmodulewidth;?>em;
+        min-width: <?php echo $minrowmodulewidth;?>em;
+    }
+
     @media screen and (min-width: 47em) {
 
         <?php if ($headerbackground): ?>
@@ -134,11 +154,22 @@ $buttontext = $this->params->get('buttontext');
             flex: <?php echo $mainwidth;?>;
         }
 
+        section.content {
+            max-width: <?php echo $contentwidth;?>em;
+        }
+
         aside.sidebar-container {
             -webkit-flex: <?php echo $asidewidth;?>;
             -moz-flex: <?php echo $asidewidth;?>;
             -ms-flex: <?php echo $asidewidth;?>;
             flex: <?php echo $asidewidth;?>;
+
+            <?php if ($equalheights == 1): ?>
+                -webkit-align-items: stretch !important;
+                -moz-align-items: stretch !important;
+                -ms-align-items: stretch !important;
+                align-items: stretch !important;
+            <?php endif; ?>
         }
 
         aside.leftbar-container {
@@ -146,6 +177,23 @@ $buttontext = $this->params->get('buttontext');
             -moz-flex: <?php echo $leftwidth;?>;
             -ms-flex: <?php echo $leftwidth;?>;
             flex: <?php echo $leftwidth;?>;
+
+            <?php if ($equalheights == 1): ?>
+                -webkit-align-items: stretch !important;
+                -moz-align-items: stretch !important;
+                -ms-align-items: stretch !important;
+                align-items: stretch !important;
+            <?php endif; ?>
+        }
+
+        aside.leftbar-container .module {
+            width: <?php echo $modulewidth;?>em;
+            min-width: <?php echo $minmodulewidth;?>em;
+        }
+
+        aside.sidebar-container .module {
+            width: <?php echo $modulewidth;?>em;
+            min-width: <?php echo $minmodulewidth;?>em;
         }
     }
 

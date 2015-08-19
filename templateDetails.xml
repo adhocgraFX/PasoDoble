@@ -90,19 +90,19 @@
                 </field>
                 <field name="bodyfont"
                        type="text"
-                       default=""
+                       default="Fira Sans"
                        label="Body Font"
                        description="Body Font Name / p" >
                 </field>
                 <field name="headlinefont"
                        type="text"
-                       default=""
+                       default="Fira Sans"
                        label="Headline Font"
                        description="Headline Font Name / h1, h2, h3, h4, h5, h6" >
                 </field>
                 <field name="monofont"
                        type="text"
-                       default=""
+                       default="Fira Mono"
                        label="Monospaced Font"
                        description="Monospaced Font Name / textarea, pre, code, kbd, samp, var, tt" >
                 </field>
@@ -148,7 +148,7 @@
                        size="3"
                        default="100"
                        label="Html base font size"
-                       description="Html base font size in %" >
+                       description="Html base font size / %" >
                 </field>
                 <field name="textindent"
                        type="radio"
@@ -183,7 +183,7 @@
                        size="10" >
                 </field>
 
-                <field name="Main Content and Aside Widths / Flex Ratio"
+                <field name="Main and Aside Widths / Flex Ratio"
                        type="spacer"
                        hr="false" >
                 </field>
@@ -199,8 +199,8 @@
                        type="text"
                        filter="integer"
                        default="13"
-                       label="Content Width"
-                       description="Content Width / Flex Factor"
+                       label="Main Width"
+                       description="Main Width / Flex Factor"
                        size="7" >
                 </field>
                 <field name="asidewidth"
@@ -210,6 +210,54 @@
                        label="Aside Width"
                        description="Aside Width Flex Factor"
                        size="7" >
+                </field>
+
+                <field name="Content Width"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="contentwidth"
+                       type="text"
+                       filter="integer"
+                       default="32"
+                       label="Content Width"
+                       description="Content width / em"
+                       size="7" >
+                </field>
+
+                <field name="Section Module and Aside Module Width"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="rowmodulewidth"
+                       type="text"
+                       filter="integer"
+                       default="24"
+                       label="Section Module Width"
+                       description="Max section module width / em"
+                       size="7" >
+                </field>
+                <field name="modulewidth"
+                       type="text"
+                       filter="integer"
+                       default="14"
+                       label="Aside Module Width"
+                       description="Aside module width / em"
+                       size="7" >
+                </field>
+
+                <field name="Equal heights in aside modules"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="equalheights"
+                       type="radio"
+                       default="0"
+                       label="Equal Heights"
+                       description="Equal heights in aside modules"
+                       class="btn-group btn-group-yesno" >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
                 </field>
 
                 <field name="Call-to-action Button"
